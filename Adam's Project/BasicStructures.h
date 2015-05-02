@@ -8,9 +8,9 @@ class MaterialData
 public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
-	double a;
-	double b;
-	double c;
+	double YM;
+	double Poisson;
+	double thickness;
 	double d;
 	double e;
 	double f;
@@ -28,15 +28,15 @@ class ElementData
 public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
-	int a;
-	int b;
-	int c;
-	int d;
-	int e;
-	int f;
-	int g;
-	int h;
-	int i;
+	int matl;
+	int Node1;
+	int Node2;
+	int Node3;
+	int Node4;
+	int Node5;
+	int Node6;
+	int Node7;
+	int Node8;
 };
 
 // this is a class that represents nodes as it seems they are defined in the input data.
