@@ -50,12 +50,27 @@ int main(int argc, char* argv[])
 			myfile >> materialData[i].g;
 			myfile >> materialData[i].h;
 			myfile >> materialData[i].i;
+			myfile >> materialData[i].j;
+			myfile >> materialData[i].k;
+			myfile >> materialData[i].l;
 		}
 		//Get element properties
 		//Element properties always start on line 3+numMatls and contain 10 values each
 		//Want to store element properties in an [numElems][10] array
-		//for(int i = 0; i < 1+numMatls+numElems; i++)
-		//getline(myfile,line);
+		ElementData *elementData = new ElementData[numElements];
+		for (int i = 0; i < numElements; i++)
+		{
+			myfile >> elementData[i].id;
+			myfile >> elementData[i].a;
+			myfile >> elementData[i].b;
+			myfile >> elementData[i].c;
+			myfile >> elementData[i].d;
+			myfile >> elementData[i].e;
+			myfile >> elementData[i].f;
+			myfile >> elementData[i].g;
+			myfile >> elementData[i].h;
+			myfile >> elementData[i].i;
+		}
 
 		NodeData *nodeData = new NodeData[numNodes];
 		//Get node properties
@@ -74,5 +89,6 @@ int main(int argc, char* argv[])
 	cout << numNodes << '\n' << numElements << '\n' << numMaterials << '\n' << prodType << '\n';
 	cout << line << '\n';
 	myfile.close();
+	system("pause");
 	return 0;
 }
