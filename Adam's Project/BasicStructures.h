@@ -1,5 +1,8 @@
 #pragma once
+// The above preprocessor command tells the preprocessor not to include this file more than once.
 
+// This class is supposed to contain all of the data that belongs to a material that we read from the file.
+// The names a-l are currently place holders so we can replace them with ones that have more semantic meaning later.
 class MaterialData
 {
 public:
@@ -19,6 +22,7 @@ public:
 	double l;
 };
 
+// this class is supposed to contain all of the data that belongs to the element rows in the source file.
 class ElementData
 {
 public:
@@ -35,6 +39,7 @@ public:
 	int i;
 };
 
+// this is a class that represents nodes as it seems they are defined in the input data.
 class NodeData
 {
 public:

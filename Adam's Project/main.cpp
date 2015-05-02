@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+
+// This include the contents of the BasicStructures.h file into this file.
 #include "BasicStructures.h"
 using namespace std;
 
@@ -27,19 +29,13 @@ int main(int argc, char* argv[])
 		myfile >> numMaterials;
 		myfile >> prodType;
 
-		// read in the second line, which I don't know what it is yet.
-		double something[13];
-		for (int i = 0; i < 13; i++)
-		{
-			myfile >> something[i];
-		}
-
 		//Get material properties
 		//Material properties always start on line 3 and contain 13 values each
 		//Want to store material properties in an [numMatls][13] array
 		MaterialData *materialData = new MaterialData[numMaterials];
 		for (int i = 0; i < numMaterials; i++)
 		{
+			// here we read each element in individually, since we want them to have a name later.  I could replace this with a loop, and we could keep the names, too, but that just might make it more confusing.
 			myfile >> materialData[i].id;
 			myfile >> materialData[i].a;
 			myfile >> materialData[i].b;
