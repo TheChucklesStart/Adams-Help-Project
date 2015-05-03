@@ -17,6 +17,11 @@ int main(int argc, char* argv[])
 	int numElements;
 	int numMaterials;
 	int prodType;
+
+	MaterialData *materialData = NULL;
+	ElementData *elementData = NULL;
+	NodeData *nodeData = NULL;
+
 	ifstream myfile("e4plate.inp");
 	if (myfile.is_open())
 	{
@@ -32,7 +37,7 @@ int main(int argc, char* argv[])
 		//Get material properties
 		//Material properties always start on line 3 and contain 13 values each
 		//Want to store material properties in an [numMatls][13] array
-		MaterialData *materialData = new MaterialData[numMaterials];
+		materialData = new MaterialData[numMaterials];
 		for (int i = 0; i < numMaterials; i++)
 		{
 			// here we read each element in individually, since we want them to have a name later.  I could replace this with a loop, and we could keep the names, too, but that just might make it more confusing.
@@ -53,7 +58,7 @@ int main(int argc, char* argv[])
 		//Get element properties
 		//Element properties always start on line 3+numMatls and contain 10 values each
 		//Want to store element properties in an [numElems][10] array
-		ElementData *elementData = new ElementData[numElements];
+		elementData = new ElementData[numElements];
 		for (int i = 0; i < numElements; i++)
 		{
 			myfile >> elementData[i].id;
@@ -68,7 +73,7 @@ int main(int argc, char* argv[])
 			myfile >> elementData[i].Node8;
 		}
 
-		NodeData *nodeData = new NodeData[numNodes];
+		nodeData = new NodeData[numNodes];
 		//Get node properties
 		//Node properties always start on line 3+numMatls+numElems and contain 3 values each
 		//Want to store node properties in an [numNodes][3] array
