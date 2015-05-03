@@ -81,10 +81,36 @@ int main(int argc, char* argv[])
 	}
 	else cout << "Unable to open file.";
 
-	//couts to check if the right values got pulled 
-	cout << numNodes << '\n' << numElements << '\n' << numMaterials << '\n' << prodType << '\n';
-	cout << line << '\n';
 	myfile.close();
 	system("pause");
+	
+//Writing to output file
+	//ran into two issues.
+	//1. the build said the project contains ToolsVersion="14.0" and that it is unknown or missing
+	//2. i copied and pasted everything (header file included) into a new project and was told that materialData and co were undeclared identifiers.  I tried MaterialData and co as well and was told it was illegal use of that operator.
+	// How do the material, element, and node properties get called for use now?
+	ofstream output("output.txt");
+	if (output.is_open())
+	{
+		output << numNodes << "  " << numElements << "  " << numMaterials << "  " << prodType << '\n';
+		for (int i = 0; i<numMaterials;i++)
+			for(int j = 0;j<13;j++)
+			{
+				output << materialData[i][j] << "  ";
+			}
+
+		for (int k = 0; k<numElements;k++)
+			for(int l = 0; l<10;l++)
+			{
+				output << elementData[k][l] << "  ";
+			}
+		
+		for (int m = 0; m<numNodes;m++)
+			for(int n = 0; n<3;n++)
+			{
+				output << nodeData[m][n] << "  ";
+			}
+
+	}
 	return 0;
 }
