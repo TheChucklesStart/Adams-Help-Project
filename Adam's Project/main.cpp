@@ -37,9 +37,9 @@ int main(int argc, char* argv[])
 		{
 			// here we read each element in individually, since we want them to have a name later.  I could replace this with a loop, and we could keep the names, too, but that just might make it more confusing.
 			myfile >> materialData[i].id;
-			myfile >> materialData[i].a;
-			myfile >> materialData[i].b;
-			myfile >> materialData[i].c;
+			myfile >> materialData[i].YM;
+			myfile >> materialData[i].Poisson;
+			myfile >> materialData[i].thickness;
 			myfile >> materialData[i].d;
 			myfile >> materialData[i].e;
 			myfile >> materialData[i].f;
@@ -57,15 +57,15 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < numElements; i++)
 		{
 			myfile >> elementData[i].id;
-			myfile >> elementData[i].a;
-			myfile >> elementData[i].b;
-			myfile >> elementData[i].c;
-			myfile >> elementData[i].d;
-			myfile >> elementData[i].e;
-			myfile >> elementData[i].f;
-			myfile >> elementData[i].g;
-			myfile >> elementData[i].h;
-			myfile >> elementData[i].i;
+			myfile >> elementData[i].matl;
+			myfile >> elementData[i].Node1;
+			myfile >> elementData[i].Node2;
+			myfile >> elementData[i].Node3;
+			myfile >> elementData[i].Node4;
+			myfile >> elementData[i].Node5;
+			myfile >> elementData[i].Node6;
+			myfile >> elementData[i].Node7;
+			myfile >> elementData[i].Node8;
 		}
 
 		NodeData *nodeData = new NodeData[numNodes];
