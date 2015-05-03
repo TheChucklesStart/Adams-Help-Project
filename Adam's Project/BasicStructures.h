@@ -47,3 +47,34 @@ public:
 	double x;
 	double y;
 };
+
+class EssentialBCData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int node;
+	string direction;
+	double value;
+};
+
+class PointForceData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int node;
+	string direction;
+	double value;
+};
+
+class NaturalBCData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int leftnode;
+	int midnode;
+	int rightnode;
+	double value;
+};

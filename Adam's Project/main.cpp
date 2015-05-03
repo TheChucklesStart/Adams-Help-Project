@@ -16,12 +16,18 @@ int main(int argc, char* argv[])
 	int numElements;
 	int numMaterials;
 	int prodType;
+	int numEBCs;
+	int numPFs;
+	int numNBCs;
 
 	MaterialData *materialData = NULL;
 	ElementData *elementData = NULL;
 	NodeData *nodeData = NULL;
+	EssentialBCData *essentialBCData = NULL;
+	PointForceData *pointForceData = NULL;
+	NaturalBCData *naturalBCData = NULL;
 
-	ifstream myfile("e4plate.inp");
+	ifstream myfile("plate.inp");
 	if (myfile.is_open())
 	{
 		//Skip title line
@@ -82,6 +88,39 @@ int main(int argc, char* argv[])
 			myfile >> nodeData[i].x;
 			myfile >> nodeData[i].y;
 		}
+
+		//Get boundary and force data
+		myfile >> numEBCs;
+		myfile >> numPFs;
+		myfile >> numNBCs;
+
+		essentialBCData = new EssentialBCData[numEBCs];
+		for (int i = 0; i < numEBCs; i++)
+		{
+			myfile >> essentialBCData[i].id;
+			myfile >> essentialBCData[i].node;
+			myfile >> essentialBCData[i].direction;
+			myfile >> essentialBCData[i].value;
+		}
+
+		pointForceData = new PointForceData[numPFs];
+		for (int i = 0; i < numPFs; i++)
+		{
+			myfile >> pointForceData[i].id;
+			myfile >> pointForceData[i].node;
+			myfile >> pointForceData[i].direction;
+			myfile >> pointForceData[i].value;
+		}
+
+		naturalBCData = new NaturalBCData[numNBCs];
+		for (int i = 0; i < numNBCs; i++)
+		{
+			myfile >> naturalBCData[i].id;
+			myfile >> naturalBCData[i].leftnode;
+			myfile >> naturalBCData[i].midnode;
+			myfile >> naturalBCData[i].rightnode;
+			myfile >> naturalBCData[i].value;
+		}
 	}
 	else cout << "Unable to open file.";
 
@@ -112,7 +151,23 @@ int main(int argc, char* argv[])
 		{
 			output  << nodeData[m].id << "  " << nodeData[m].x << "  " << nodeData[m].y << '\n';
 		}
+		
+		output << numEBCs << "  " << numPFs << "  " << numNBCs << '\n';
+		
+		for (int i = 0; i<numEBCs;i++)
+		{
+			output << essentialBCData[i].id << "  " << essentialBCData[i].node << "  " << essentialBCData[i].direction << "  " << essentialBCData[i].value << '\n' ;
+		}
 
+		for (int i = 0; i<numPFs;i++)
+		{
+			output << pointForceData[i].id << "  " << pointForceData[i].node << "  "<< pointForceData[i].direction << "  "<< pointForceData[i].value << '\n' ;
+		}
+
+		for (int i = 0; i<numNBCs;i++)
+		{
+			output << naturalBCData[i].id << "  " << naturalBCData[i].leftnode << "  " << naturalBCData[i].midnode << "  " << naturalBCData[i].rightnode << "  "  << naturalBCData[i].value << '\n' ;
+		}
 	}
 	return 0;
 }
