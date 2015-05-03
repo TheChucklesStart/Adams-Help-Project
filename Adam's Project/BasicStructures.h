@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 // The above preprocessor command tells the preprocessor not to include this file more than once.
 
 // This class is supposed to contain all of the data that belongs to a material that we read from the file.
@@ -46,4 +50,35 @@ public:
 	int id;
 	double x;
 	double y;
+};
+
+class EssentialBCData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int node;
+	string direction;
+	double value;
+};
+
+class PointForceData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int node;
+	string direction;
+	double value;
+};
+
+class NaturalBCData
+{
+public:
+	int id;
+	// TODO give these proper names and comments, visual studio should do start renaming
+	int leftnode;
+	int midnode;
+	int rightnode;
+	double value;
 };
