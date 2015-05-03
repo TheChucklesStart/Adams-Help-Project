@@ -1,10 +1,9 @@
-
 // ReadFile.cpp : Defines the entry point for the console application.
+
+#include "stdafx.h"
 #include <iostream>
 #include <fstream>
 #include <string>
-
-// This include the contents of the BasicStructures.h file into this file.
 #include "BasicStructures.h"
 using namespace std;
 
@@ -99,22 +98,20 @@ int main(int argc, char* argv[])
 	{
 		output << numNodes << "  " << numElements << "  " << numMaterials << "  " << prodType << '\n';
 		for (int i = 0; i<numMaterials;i++)
-			for(int j = 0;j<13;j++)
-			{
-				output << materialData[i][j] << "  ";
-			}
+		{
+			output << materialData[i].id << "  " << materialData[i].YM << "  " << materialData[i].Poisson << "  " << materialData[i].thickness << "  " << materialData[i].g << '\n' ;
+		}
 
 		for (int k = 0; k<numElements;k++)
-			for(int l = 0; l<10;l++)
-			{
-				output << elementData[k][l] << "  ";
-			}
+		{
+			output << elementData[k].id << "  " << elementData[k].matl << "  "  << elementData[k].Node1 << "  " << elementData[k].Node2 << "  " << elementData[k].Node3 << "  ";
+			output << elementData[k].Node4 << "  " << elementData[k].Node5 << "  " << elementData[k].Node6 << "  " << elementData[k].Node7 << "  " << elementData[k].Node8 << '\n';
+		}
 		
 		for (int m = 0; m<numNodes;m++)
-			for(int n = 0; n<3;n++)
-			{
-				output << nodeData[m][n] << "  ";
-			}
+		{
+			output  << nodeData[m].id << "  " << nodeData[m].x << "  " << nodeData[m].y << '\n';
+		}
 
 	}
 	return 0;
