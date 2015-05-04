@@ -76,13 +76,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femDefine.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdof.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElementQ8.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femEssentialBC.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femGauss3Pt.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterial.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterialElastic.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femNaturalBC.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femnode.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femPointBC.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femsolve.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrix.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrixBandedSymm.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrixFull.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlStress2D.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlvec2d.h" />
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlVector.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\School\Project\Geometry\femElement.cpp" />
+    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.cpp" />
     <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
