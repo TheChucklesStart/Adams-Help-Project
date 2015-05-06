@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\vex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp">
@@ -35,6 +38,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ExceptionList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\vex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
