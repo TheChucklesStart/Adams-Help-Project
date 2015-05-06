@@ -20,12 +20,12 @@ Controller::Controller()
 
 Controller::~Controller()
 {
-	delete[] materialData;
-	delete[] elementData;
-	delete[] nodeData;
-	delete[] essentialBCData;
-	delete[] pointForceData;
-	delete[] naturalBCData;
+	if (materialData != NULL) delete[] materialData;
+	if (elementData != NULL) delete[] elementData;
+	if (nodeData != NULL) delete[] nodeData;
+	if (essentialBCData != NULL) delete[] essentialBCData;
+	if (pointForceData != NULL) delete[] pointForceData;
+	if (naturalBCData != NULL) delete[] naturalBCData;
 }
 
 void Controller::readData(string fileName)
@@ -175,4 +175,6 @@ void Controller::writeData(string fileName)
 	{
 		output << naturalBCData[i].id << "  " << naturalBCData[i].leftnode << "  " << naturalBCData[i].midnode << "  " << naturalBCData[i].rightnode << "  " << naturalBCData[i].value << '\n';
 	}
+
+	output.close();
 }
