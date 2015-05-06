@@ -92,5 +92,8 @@
     <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

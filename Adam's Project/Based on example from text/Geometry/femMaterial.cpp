@@ -17,6 +17,6 @@ femMaterial::~femMaterial()
 void femMaterial::printData(ostream &out) const
 {
 	out << " ********************* Material Data ******************************" << '\n' << '\n';
-	out << " ID =    " << d_id << "  E =   " << XXXXXX << "  Nu =   " << XXXXXX << '\n';
+	out << " ID =    " << d_id /*<< "  E =   " << XXXXXX << "  Nu =   " << XXXXXX << '\n'*/;
 	//for loop for nodes?
 }

@@ -7,8 +7,8 @@
 #ifndef femMaterial_h
 #define femMaterial_h
 
-#include "utlMatrix.h"
-//#include <iostream.h>
+//#include "utlMatrix.h"
+#include <iostream>
 
 using namespace std;
 
@@ -29,7 +29,7 @@ class femMaterial
 
     //Functions
 	int getID() const;	//	return d_id;
-	virtual void getDMatrixStress(utlMatrix &d) = 0;	//pure virtual function
+//	virtual void getDMatrixStress(utlMatrix &d) = 0;	//pure virtual function
 //	virtual void getDMatrixHeat(utlMatrix &d) = 0;
 	virtual void printData(ostream &out) const = 0;
 };

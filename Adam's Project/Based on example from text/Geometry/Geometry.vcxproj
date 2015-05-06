@@ -101,6 +101,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.cpp" />
     <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.cpp" />
+    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterial.cpp" />
     <ClCompile Include="Geometry.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
