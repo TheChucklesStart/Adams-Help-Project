@@ -18,6 +18,9 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp">
@@ -28,61 +31,10 @@
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femdata.h">
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femdof.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femElementQ8.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femEssentialBC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femGauss3Pt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femMaterial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femMaterialElastic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femNaturalBC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femnode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femPointBC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femsolve.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrixBandedSymm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrixFull.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlStress2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlvec2d.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlVector.h">
+    <ClInclude Include="ExceptionList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

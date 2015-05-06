@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -74,25 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femdata.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femDefine.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femdof.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femElement.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femElementQ8.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femEssentialBC.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femGauss3Pt.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femMaterial.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femMaterialElastic.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femNaturalBC.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femnode.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femPointBC.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\femsolve.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrix.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrixBandedSymm.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlMatrixFull.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlStress2D.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlvec2d.h" />
-    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\utlVector.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
+    <ClInclude Include="ExceptionList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
