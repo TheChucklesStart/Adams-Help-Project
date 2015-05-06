@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "femdata.h"
+#include "femnode.h"
+#include "femElement.h"
+#include "femMaterial.h"
 
 femData::femData()
 {
@@ -11,14 +14,11 @@ femData::~femData()
 
 void femData::readData(istream &inp)
 {
-	inp >> d_title;
-	inp >> d_numElems;
 	inp >> d_numNodes;
+	inp >> d_numElems;
 	inp >> d_numMats;
 	inp >> d_probType;
-	//inp >> d_matprops;
-	//inp >> d_elems;
-	//inp >> d_nodes;
+
 }
 
 void femData::writeData(ostream &out)

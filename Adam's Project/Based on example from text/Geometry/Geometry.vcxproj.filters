@@ -21,22 +21,16 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femnode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdof.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElementQ8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femEssentialBC.h">
@@ -45,13 +39,16 @@
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femGauss3Pt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElementQ8.h">
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterialElastic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femNaturalBC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femMaterialElastic.h">
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femnode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femPointBC.h">
@@ -60,7 +57,7 @@
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femsolve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrixBandedSymm.h">
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrixFull.h">
@@ -78,6 +75,9 @@
     <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\utlMatrixBandedSymm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -86,10 +86,10 @@
     <ClCompile Include="Geometry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\School\Project\Geometry\femElement.cpp">
+    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femdata.cpp">
+    <ClCompile Include="..\..\..\Adam%27s Project\Based on example from text\Geometry\femElement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
