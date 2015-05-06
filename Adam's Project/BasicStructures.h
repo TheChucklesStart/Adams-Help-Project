@@ -32,9 +32,9 @@ class ElementData
 public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
-	int matl;
+	MaterialData material;
 	int numNodes;
-	int *Node;
+	NodeData *Node;
 
 	void convertCoordinates();
 };
