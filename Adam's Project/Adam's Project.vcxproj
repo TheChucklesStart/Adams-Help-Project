@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\vex.cpp" />

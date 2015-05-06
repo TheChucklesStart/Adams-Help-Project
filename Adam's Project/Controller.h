@@ -34,4 +34,6 @@ public:
 
 	// This method writes out all of the data so we can verify correctness
 	void writeData(string fileName);
+
+	void elementCoordinateConversion();
 };

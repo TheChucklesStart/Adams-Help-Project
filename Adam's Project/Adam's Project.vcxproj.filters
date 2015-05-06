@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\vex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp">

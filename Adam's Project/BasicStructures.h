@@ -33,14 +33,10 @@ public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
 	int matl;
-	int Node1;
-	int Node2;
-	int Node3;
-	int Node4;
-	int Node5;
-	int Node6;
-	int Node7;
-	int Node8;
+	int numNodes;
+	int *Node;
+
+	void convertCoordinates();
 };
 
 // this is a class that represents nodes as it seems they are defined in the input data.
