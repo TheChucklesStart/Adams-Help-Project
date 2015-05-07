@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Controller.h"
 
 Controller::Controller()
@@ -5,7 +6,7 @@ Controller::Controller()
 	numNodes = 0;
 	numElements = 0;
 	numMaterials = 0;
-	prodType = 0;
+	probType = 0;
 	numEBCs = 0;
 	numPFs = 0;
 	numNBCs = 0;
@@ -45,11 +46,9 @@ void Controller::readData(string fileName)
 	myfile >> numNodes;
 	myfile >> numElements;
 	myfile >> numMaterials;
-	myfile >> prodType;
+	myfile >> probType;
 
 	//Get material properties
-	//Material properties always start on line 3 and contain 13 values each
-	//Want to store material properties in an [numMatls][13] array
 	materialData = new MaterialData[numMaterials];
 	for (int i = 0; i < numMaterials; i++)
 	{
@@ -69,13 +68,11 @@ void Controller::readData(string fileName)
 		myfile >> materialData[i].l;
 	}
 	//Get element properties
-	//Element properties always start on line 3+numMatls and contain 10 values each
-	//Want to store element properties in an [numElems][10] array
 	elementData = new ElementData[numElements];
 	for (int i = 0; i < numElements; i++)
 	{
 		myfile >> elementData[i].id;
-		myfile >> elementData[i].matl;
+		myfile >> elementData[i].material;
 		myfile >> elementData[i].Node1;
 		myfile >> elementData[i].Node2;
 		myfile >> elementData[i].Node3;
@@ -88,8 +85,6 @@ void Controller::readData(string fileName)
 
 	nodeData = new NodeData[numNodes];
 	//Get node properties
-	//Node properties always start on line 3+numMatls+numElems and contain 3 values each
-	//Want to store node properties in an [numNodes][3] array
 	for (int i = 0; i < numNodes; i++)
 	{
 		myfile >> nodeData[i].id;
@@ -101,7 +96,8 @@ void Controller::readData(string fileName)
 	myfile >> numEBCs;
 	myfile >> numPFs;
 	myfile >> numNBCs;
-
+	
+	//Get essential BCs
 	essentialBCData = new EssentialBCData[numEBCs];
 	for (int i = 0; i < numEBCs; i++)
 	{
@@ -111,6 +107,7 @@ void Controller::readData(string fileName)
 		myfile >> essentialBCData[i].value;
 	}
 
+	//Get point forces
 	pointForceData = new PointForceData[numPFs];
 	for (int i = 0; i < numPFs; i++)
 	{
@@ -120,6 +117,7 @@ void Controller::readData(string fileName)
 		myfile >> pointForceData[i].value;
 	}
 
+	//Get natural BCs
 	naturalBCData = new NaturalBCData[numNBCs];
 	for (int i = 0; i < numNBCs; i++)
 	{
@@ -142,7 +140,7 @@ void Controller::writeData(string fileName)
 		throw IO_ERROR;
 	}
 
-	output << numNodes << "  " << numElements << "  " << numMaterials << "  " << prodType << '\n';
+	output << numNodes << "  " << numElements << "  " << numMaterials << "  " << probType << '\n';
 	for (int i = 0; i<numMaterials;i++)
 	{
 		output << materialData[i].id << "  " << materialData[i].YM << "  " << materialData[i].Poisson << "  " << materialData[i].thickness << "  " << materialData[i].g << '\n';
@@ -150,7 +148,7 @@ void Controller::writeData(string fileName)
 
 	for (int k = 0; k<numElements;k++)
 	{
-		output << elementData[k].id << "  " << elementData[k].matl << "  " << elementData[k].Node1 << "  " << elementData[k].Node2 << "  " << elementData[k].Node3 << "  ";
+		output << elementData[k].id << "  " << elementData[k].material << "  " << elementData[k].Node1 << "  " << elementData[k].Node2 << "  " << elementData[k].Node3 << "  ";
 		output << elementData[k].Node4 << "  " << elementData[k].Node5 << "  " << elementData[k].Node6 << "  " << elementData[k].Node7 << "  " << elementData[k].Node8 << '\n';
 	}
 
@@ -177,4 +175,19 @@ void Controller::writeData(string fileName)
 	}
 
 	output.close();
+}
+
+int Controller::getProbType()
+{
+	return probType;
+}
+
+double Controller::getYM()
+{
+	return materialData[1].YM;
+}
+
+double Controller::getNu()
+{
+	return materialData[1].Poisson;
 }
