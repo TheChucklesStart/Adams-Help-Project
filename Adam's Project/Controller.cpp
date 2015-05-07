@@ -198,18 +198,22 @@ void Controller::writeData(string fileName)
 		output << " Nodes =    " << naturalBCData[i].leftnode << "  " << naturalBCData[i].midnode << "  " << naturalBCData[i].rightnode << "  " << naturalBCData[i].value << '\n';
 	}
 
+
+
 	output.close();
 }
 
-//int Controller::setProbType(ProblemType)
+int Controller::getProbType()
+{
+	return probType;
+}
 
-
-/*double Controller::getYM()
+double Controller::getYM()
 {
 	return materialData[1].YM;
 }
 
-double Controller::getNu()
+double Controller::getPoisson()
 {
 	return materialData[1].Poisson;
-}*/
+}

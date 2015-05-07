@@ -1,12 +1,15 @@
 #include "stdafx.h"
-#include "D_matrix.h"
+#include "calc_D_matrix.h"
 #include "Controller.h"
 
-Controller pull_data;
-
-D_matrix::D_matrix(Controller::probType, Controller::materialData[1].YM, Controller::materialData[1].Poisson)
+calc_D_matrix::calc_D_matrix()
 {
-	if (probType == 1)
+	Controller DMdata;
+	ProblemType = DMdata.getProbType();
+	YM = DMdata.getYM();
+	Poisson = DMdata.getPoisson();
+
+	if (ProblemType == 1)
 	{
 		coeff = YM / (1 - Poisson*Poisson);
 		stiffness[0][0] = 1;
@@ -29,14 +32,14 @@ D_matrix::D_matrix(Controller::probType, Controller::materialData[1].YM, Control
 		//multiply coeff my stiffness
 		for (int i = 0; i<4; i++)
 		{
-			for (int j = 0, j<4; j++)
+			for (int j = 0; j < 4; j++)
 			{
 				D_matrix[i][j] = coeff*stiffness[i][j];
 			}
 		}
 	}
 
-	else if (probType == 2)
+	else if (ProblemType == 2)
 	{
 		coeff = YM / ((1 + Poisson)*(1 - 2 * Poisson));
 		stiffness[0][0] = (1 - Poisson);
@@ -59,7 +62,7 @@ D_matrix::D_matrix(Controller::probType, Controller::materialData[1].YM, Control
 		//multiply coeff my stiffness
 		for (int i = 0; i<4; i++)
 		{
-			for (int j = 0, j<4; j++)
+			for (int j = 0; j < 4; j++)
 			{
 				D_matrix[i][j] = coeff*stiffness[i][j];
 			}
@@ -68,11 +71,18 @@ D_matrix::D_matrix(Controller::probType, Controller::materialData[1].YM, Control
 
 	else
 	{
-		cout << "Problem Type " << probType << " not recognised." << endl.
+		cout << "Problem Type " << probType << " not recognised." << endl;
 	}
-
 }
 
-D_matrix::~D_matrix() {
-
+void calc_D_matrix::printData(ostream &out) const
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			out << D_matrix[i][j] << " ";
+		}
+		out << endl;
+	}
 }

@@ -30,10 +30,11 @@ public:
 	Controller();
 	~Controller();
 
-	void setProbType(int ProblemType);
+	//TRIAL get probType, YM and Poisson
 	int getProbType();
 	double getYM();
-	double getNu();
+	double getPoisson();
+	
 	// This method reads in all of the data from the inp file.
 	void readData(string fileName);
 
