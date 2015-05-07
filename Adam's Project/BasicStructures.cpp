@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "BasicStructures.h"
 
 void ElementData::convertCoordinates()

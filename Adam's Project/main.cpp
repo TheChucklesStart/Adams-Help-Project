@@ -21,7 +21,9 @@ int main(int argc, char* argv[])
 
 	system("pause");
 
-	controller.writeData("final_finite.inp");
+	controller.writeData("final_finite.out");
 
 	return 0;
 }
+
+

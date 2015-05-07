@@ -140,49 +140,71 @@ void Controller::writeData(string fileName)
 		throw IO_ERROR;
 	}
 
-	output << numNodes << "  " << numElements << "  " << numMaterials << "  " << probType << '\n';
+	output << " ******************************************************************\n";
+	output << " *                                                                *\n";
+	output << " *                     ME 862 Final Project                       *\n";
+	output << " *                                                                *\n";
+	output << " ******************************************************************\n\n";
+	
+	output << "     Nodes = " << numNodes << "     Elements = " << numElements << "     Materials = " << numMaterials << '\n';
+	output << endl;
+
+	output << " ********************* Material Data ******************************\n\n";
 	for (int i = 0; i<numMaterials;i++)
 	{
-		output << materialData[i].id << "  " << materialData[i].YM << "  " << materialData[i].Poisson << "  " << materialData[i].thickness << "  " << materialData[i].g << '\n';
+		output << " ID =    " << materialData[i].id << "  E =   " << materialData[i].YM << "  Nu =   " << materialData[i].Poisson << '\n';
 	}
+	output << endl;
+	output << " ********************* Element Data *******************************\n\n";
+	output << " ElemID  Material           Node Connectivity\n";
 
 	for (int k = 0; k<numElements;k++)
 	{
-		output << elementData[k].id << "  " << elementData[k].material << "  " << elementData[k].Node1 << "  " << elementData[k].Node2 << "  " << elementData[k].Node3 << "  ";
-		output << elementData[k].Node4 << "  " << elementData[k].Node5 << "  " << elementData[k].Node6 << "  " << elementData[k].Node7 << "  " << elementData[k].Node8 << '\n';
+		output << "     " << elementData[k].id << "        " << elementData[k].material << "     " << elementData[k].Node1 << "     " << elementData[k].Node2 << "   " << elementData[k].Node3;
+		output << "   " << elementData[k].Node4 << "   " << elementData[k].Node5 << "     " << elementData[k].Node6 << "    " << elementData[k].Node7 << "     " << elementData[k].Node8 << '\n';
 	}
 
+	output << endl;
+	output << " ********************** Nodal Data ********************************\n\n";
+	
 	for (int m = 0; m<numNodes;m++)
 	{
-		output << nodeData[m].id << "  " << nodeData[m].x << "  " << nodeData[m].y << '\n';
+		output << " ID =      " << nodeData[m].id << "  X =   " << nodeData[m].x << "  Y =   " << nodeData[m].y << '\n';
 	}
 
-	output << numEBCs << "  " << numPFs << "  " << numNBCs << '\n';
+	output << endl;
 
+	//output << numEBCs << "  " << numPFs << "  " << numNBCs << '\n';
+
+	output << " ********************** Essential BC Data *************************\n\n";
 	for (int i = 0; i<numEBCs;i++)
 	{
-		output << essentialBCData[i].id << "  " << essentialBCData[i].node << "  " << essentialBCData[i].direction << "  " << essentialBCData[i].value << '\n';
+		output << " Node =    " << essentialBCData[i].node << "   " << essentialBCData[i].direction << " =   " << essentialBCData[i].value << '\n';
 	}
+
+	output << endl;
+	output << " ********************** Point Load BC Data ************************\n\n";
 
 	for (int i = 0; i<numPFs;i++)
 	{
-		output << pointForceData[i].id << "  " << pointForceData[i].node << "  " << pointForceData[i].direction << "  " << pointForceData[i].value << '\n';
+		output << " Node =    " << pointForceData[i].node << ", " << pointForceData[i].direction << " =   " << pointForceData[i].value << '\n';
 	}
+
+	output << endl;
+	output << " ********************** Natural BC Data ***************************\n\n";
 
 	for (int i = 0; i<numNBCs;i++)
 	{
-		output << naturalBCData[i].id << "  " << naturalBCData[i].leftnode << "  " << naturalBCData[i].midnode << "  " << naturalBCData[i].rightnode << "  " << naturalBCData[i].value << '\n';
+		output << " Nodes =    " << naturalBCData[i].leftnode << "  " << naturalBCData[i].midnode << "  " << naturalBCData[i].rightnode << "  " << naturalBCData[i].value << '\n';
 	}
 
 	output.close();
 }
 
-int Controller::getProbType()
-{
-	return probType;
-}
+//int Controller::setProbType(ProblemType)
 
-double Controller::getYM()
+
+/*double Controller::getYM()
 {
 	return materialData[1].YM;
 }
@@ -190,4 +212,4 @@ double Controller::getYM()
 double Controller::getNu()
 {
 	return materialData[1].Poisson;
-}
+}*/

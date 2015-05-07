@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,8 +13,8 @@ class MaterialData
 public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
-	double YM;
-	double Poisson;
+	float YM;
+	float Poisson;
 	double thickness;
 	double d;
 	double e;
@@ -32,9 +33,15 @@ class ElementData
 public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
-	MaterialData material;
-	int numNodes;
-	NodeData *Node;
+	int material;
+	double Node1;
+	double Node2;
+	double Node3;
+	double Node4;
+	double Node5;
+	double Node6;
+	double Node7;
+	double Node8;
 
 	void convertCoordinates();
 };

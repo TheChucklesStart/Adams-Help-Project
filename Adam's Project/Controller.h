@@ -13,10 +13,11 @@ protected:
 	int numNodes;
 	int numElements;
 	int numMaterials;
-	int prodType;
+	int probType;
 	int numEBCs;
 	int numPFs;
 	int numNBCs;
+	double YM;
 
 	MaterialData *materialData;
 	ElementData *elementData;
@@ -29,6 +30,10 @@ public:
 	Controller();
 	~Controller();
 
+	void setProbType(int ProblemType);
+	int getProbType();
+	double getYM();
+	double getNu();
 	// This method reads in all of the data from the inp file.
 	void readData(string fileName);
 
