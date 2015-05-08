@@ -16,7 +16,7 @@ protected:
 	double Poisson;
 
 public:
-	calc_D_matrix();
+	calc_D_matrix(float val1, float val2, Controller &contrroller);
 	~calc_D_matrix();
 	
 	//Functions
