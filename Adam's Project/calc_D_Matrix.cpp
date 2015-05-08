@@ -2,12 +2,16 @@
 #include "calc_D_matrix.h"
 #include "Controller.h"
 
-calc_D_matrix::calc_D_matrix()
+calc_D_matrix::calc_D_matrix(float val1, float val2, Controller &contrroller)
 {
-	Controller DMdata;
-	ProblemType = DMdata.getProbType();
-	YM = DMdata.getYM();
-	Poisson = DMdata.getPoisson();
+	YM = val1;
+	
+	ProblemType = contrroller.getProbType();
+	YM = contrroller.getYM();
+	Poisson = contrroller.getPoisson();
+
+	// calc_D_matrix matrix(.5, .7, controller);
+	// calc_D_matrix *matrix = new calc_D_matrix(.5, .7, controller);
 
 	if (ProblemType == 1)
 	{
