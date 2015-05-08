@@ -2,7 +2,7 @@
 #include "calc_D_matrix.h"
 #include "Controller.h"
 
-calc_D_matrix::calc_D_matrix(int val1, float val2, float val3, Controller &controller)
+calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &controller)
 {
 	ProblemType = val1;
 	YM = val2;
