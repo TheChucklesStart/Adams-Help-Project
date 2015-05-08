@@ -81,14 +81,14 @@ calc_D_matrix::calc_D_matrix(int val1, float val2, float val3, Controller &contr
 	}
 }
 
-void calc_D_matrix::printData(cout) const
+void calc_D_matrix::printData(ostream &out) const
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			cout << D_matrix[i][j] << " ";
+			out << D_matrix[i][j] << " ";
 		}
-		cout << endl;
+		out << endl;
 	}
 }

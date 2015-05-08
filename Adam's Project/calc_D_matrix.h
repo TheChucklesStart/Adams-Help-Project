@@ -20,6 +20,6 @@ public:
 	~calc_D_matrix();
 	
 	//Functions
-void printData(cout) const;
+void printData(ostream &out) const;
 };
 
