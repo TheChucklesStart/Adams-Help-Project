@@ -2,13 +2,15 @@
 #include "calc_D_matrix.h"
 #include "Controller.h"
 
-calc_D_matrix::calc_D_matrix(float val1, float val2, Controller &contrroller)
+calc_D_matrix::calc_D_matrix(int val1, float val2, float val3, Controller &controller)
 {
-	YM = val1;
+	ProblemType = val1;
+	YM = val2;
+	Poisson = val3;
 	
-	ProblemType = contrroller.getProbType();
-	YM = contrroller.getYM();
-	Poisson = contrroller.getPoisson();
+	ProblemType = controller.getProbType();
+	YM = controller.getYM();
+	Poisson = controller.getPoisson();
 
 	// calc_D_matrix matrix(.5, .7, controller);
 	// calc_D_matrix *matrix = new calc_D_matrix(.5, .7, controller);
@@ -79,14 +81,14 @@ calc_D_matrix::calc_D_matrix(float val1, float val2, Controller &contrroller)
 	}
 }
 
-void calc_D_matrix::printData(ostream &out) const
+void calc_D_matrix::printData(cout) const
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			out << D_matrix[i][j] << " ";
+			cout << D_matrix[i][j] << " ";
 		}
-		out << endl;
+		cout << endl;
 	}
 }

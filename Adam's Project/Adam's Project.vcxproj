@@ -71,7 +71,7 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\vex.cpp" />
-    <ClCompile Include="..\Adam%27s Project\D_Matrix.cpp" />
+    <ClCompile Include="..\Adam%27s Project\calc_D_Matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp" />
@@ -80,7 +80,7 @@
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\vex.h" />
-    <ClInclude Include="..\Adam%27s Project\D_matrix.h" />
+    <ClInclude Include="..\Adam%27s Project\calc_D_matrix.h" />
     <ClInclude Include="ExceptionList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

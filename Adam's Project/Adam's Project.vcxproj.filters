@@ -27,7 +27,7 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Adam%27s Project\D_Matrix.cpp">
+    <ClCompile Include="..\Adam%27s Project\calc_D_Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,7 +49,7 @@
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\vex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Adam%27s Project\D_matrix.h">
+    <ClInclude Include="..\Adam%27s Project\calc_D_matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

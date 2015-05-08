@@ -16,10 +16,10 @@ protected:
 	double Poisson;
 
 public:
-	calc_D_matrix(float val1, float val2, Controller &contrroller);
+	calc_D_matrix(int val1, float val2, float val3, Controller &controller);
 	~calc_D_matrix();
 	
 	//Functions
-void printData(ostream &out) const;
+void printData(cout) const;
 };
 
