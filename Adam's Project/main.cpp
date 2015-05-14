@@ -1,6 +1,7 @@
 // ReadFile.cpp : Defines the entry point for the console application.
 #include "stdafx.h"
 #include "calc_D_matrix.h"
+#include "calc_B_matrix.h"
 #include "Controller.h"
 
 
@@ -11,7 +12,7 @@ int main(int argc, char* argv[])
 	// (it is being created on the stack so we don't have to worry about deleting it)
 	// (because its constructor is argumentless, we cannot call it explicitly, but it is called implicitly)
 	Controller controller;
-	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
+
 
 	//Interface
 	string file_name;
@@ -22,7 +23,13 @@ int main(int argc, char* argv[])
 	controller.readData(file_name);
 
 	system("pause");
+	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
+	calc_B_matrix trial(controller.getElemID(0), controller);
 	test.printData(cout);
+	trial.printData(cout);
+	//cout << controller.getProbType() << endl;
+	//cout << controller.getYM() << endl;
+	//cout << controller.getPoisson() << endl;
 
 	controller.writeData("final_finite.out");
 

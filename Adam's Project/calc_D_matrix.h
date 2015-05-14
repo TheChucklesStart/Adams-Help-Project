@@ -17,7 +17,7 @@ protected:
 
 public:
 	calc_D_matrix(int val1, double val2, double val3, Controller &controller);
-	~calc_D_matrix();
+	//~calc_D_matrix();
 	
 	//Functions
 void printData(ostream &out) const;

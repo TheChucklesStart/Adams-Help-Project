@@ -5,10 +5,6 @@ using namespace std;
 class MatrixFunctions
 {
 public:
-	//Constructor-Destructor
-	//MatrixFunctions();
-	//~MatrixFunctions();
-
-	//Functions
-	double mmult_function(int r, int s, int t, double in_matrix1[r][s], double in_matrix2[s][t], double out_matrix[r][t]);
-}
+	double f_gauss_jordan_elim(int n, double m_coeff[][10], double b[], double x[]);
+	void multiply(int r, int s, int t, double inMatrix1[][10], double inMatrix2[][10], double outMatrix[][10]);
+};

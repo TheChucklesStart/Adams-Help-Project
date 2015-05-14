@@ -8,9 +8,9 @@ mmult_function(D_matrix, B_matrix, 4, 4, 16, temp_matrix1)
 mmult_function(B_transpose, temp_matrix1, 16, 4, 16, temp_matrix2)
 
 //double loop to for M matrix
-for (int i = 0; i<15; i++)
+for (int i = 0; i<16; i++)
 {
-	for (int j = 0; j<15; j++)
+	for (int j = 0; j<16; j++)
 	{
 		M_matrix[i][j] = temp_matrix2[i][j]*det_J;
 	}

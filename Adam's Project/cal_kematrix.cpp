@@ -18,25 +18,25 @@ weight[1] = 1;
 double Ke_matrix[16][16]
 
 //Initialize ke_matrix to zero
-for (int p = 0; p<15; p++)
+for (int p = 0; p<16; p++)
 {
-	for (int q = 0; q<15; q++)
+	for (int q = 0; q<16; q++)
 	{
 		Ke_matrix[i][j] = 0;
 	}
 }
 
 //Double loop to go though all 2x2 gaussian points
-for (int j = 0; j<1; j++)
+for (int j = 0; j<2; j++)
 {
-	for (int i = 0; i<1; 1++)
+	for (int i = 0; i<2; 1++)
 	{
 		call cal_bmatrix_function(zeta[i], eta[j], B_matrix, B_transpose, det_J)
 		call cal_mmatrix_function(zeta[i], eta[j], B_matrix, B_transpose, det_J, M_matrix)
 		//double loop to go through all 16x16 coeffs for ke_matrix and add contribution from each Gaussian point
-		for (int p = 0; p<15; p++)
+		for (int p = 0; p<16; p++)
 		{
-			for (int q = 0: q<15; q++)
+			for (int q = 0: q<16 q++)
 			{
 				Ke_matrix[p][q] = Ke_matrix[p][q]+t*M_matrix[p][q]*weight[i]*weight[j];
 			}

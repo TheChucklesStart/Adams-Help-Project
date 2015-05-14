@@ -7,10 +7,7 @@ calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &con
 	ProblemType = val1;
 	YM = val2;
 	Poisson = val3;
-	
-	ProblemType = controller.getProbType();
-	YM = controller.getYM();
-	Poisson = controller.getPoisson();
+
 
 	// calc_D_matrix matrix(.5, .7, controller);
 	// calc_D_matrix *matrix = new calc_D_matrix(.5, .7, controller);
@@ -83,9 +80,9 @@ calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &con
 
 void calc_D_matrix::printData(ostream &out) const
 {
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i <4; i++)
 	{
-		for (int j = 0; j < 3; j++)
+		for (int j = 0; j < 4; j++)
 		{
 			out << D_matrix[i][j] << " ";
 		}

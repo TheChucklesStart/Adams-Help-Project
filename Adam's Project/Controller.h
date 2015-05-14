@@ -30,10 +30,23 @@ public:
 	Controller();
 	~Controller();
 
-	//TRIAL get probType, YM and Poisson
+	//Get values for claculating D_matrix
 	int getProbType();
 	double getYM();
 	double getPoisson();
+
+	//Get values for calculating B_matrix
+	int getElemID(int i);
+	double getNode1(int i);
+	double getNode2(int i);
+	double getNode3(int i);
+	double getNode4(int i);
+	double getNode5(int i);
+	double getNode6(int i);
+	double getNode7(int i);
+	double getNode8(int i);
+	double getXcoord(int i);
+	double getYcoord(int i);
 	
 	// This method reads in all of the data from the inp file.
 	void readData(string fileName);

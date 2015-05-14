@@ -210,10 +210,59 @@ int Controller::getProbType()
 
 double Controller::getYM()
 {
-	return materialData[1].YM;
+	return materialData[0].YM*10000000;
 }
 
 double Controller::getPoisson()
 {
-	return materialData[1].Poisson;
+	return materialData[0].Poisson;
+}
+
+int Controller::getElemID(int i)
+{
+	return elementData[i].id;
+}
+
+double Controller::getNode1(int i)
+{
+	return elementData[i].Node1;
+}
+
+double Controller::getNode2(int i)
+{
+	return elementData[i].Node2;
+}
+double Controller::getNode3(int i)
+{
+	return elementData[i].Node3;
+}
+double Controller::getNode4(int i)
+{
+	return elementData[i].Node4;
+}
+double Controller::getNode5(int i)
+{
+	return elementData[i].Node5;
+}
+double Controller::getNode6(int i)
+{
+	return elementData[i].Node6;
+}
+double Controller::getNode7(int i)
+{
+	return elementData[i].Node7;
+}
+double Controller::getNode8(int i)
+{
+	return elementData[i].Node8;
+}
+
+double Controller::getXcoord(int i)
+{
+	return nodeData[i].x;
+}
+
+double Controller::getYcoord(int i)
+{
+	return nodeData[i].y;
 }

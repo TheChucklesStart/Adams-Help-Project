@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "vex.h"
 
 const vex vex_zero;
