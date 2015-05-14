@@ -17,7 +17,7 @@ protected:
 	int Node8;
 
 public:
-	Element_Nodes(int val1, int val2, int val3, int val4, int val5, int val6, int val7, int val8, Controller &controller);
+	ElementNodes(int val1, int val2, int val3, int val4, int val5, int val6, int val7, int val8, Controller &controller);
 	//NodeCoords(double coord1, double coord2, Controller &controller);
 	void printData(ostream &out) const;
 };

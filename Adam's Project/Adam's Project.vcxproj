@@ -68,8 +68,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_bmatrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\matrixfunctions.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\vex.cpp" />
     <ClCompile Include="..\Adam%27s Project\calc_D_Matrix.cpp" />
   </ItemGroup>
@@ -78,7 +81,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_B_matrix.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\MatrixFunctions.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\targetver.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\vex.h" />
     <ClInclude Include="..\Adam%27s Project\calc_D_matrix.h" />
     <ClInclude Include="ExceptionList.h" />
