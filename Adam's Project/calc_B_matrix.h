@@ -12,10 +12,10 @@ protected:
 	int Node1;
 	double x1;
 	double y1;
-	double Jacobian[2][2];
-	double B_transpose[16][4];
-	double B_matrix[4][16];
-	double det_Jacob;
+	//double Jacobian[2][2];
+	//double B_transpose[16][4];
+	//double B_matrix[4][16];
+	//double det_Jacob;
 
 public:
 	calc_B_matrix(int val1, Controller &controller);

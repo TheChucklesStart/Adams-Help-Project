@@ -1,26 +1,24 @@
 #include "stdafx.h"
 #include "Controller.h"
 #include "calc_B_matrix.h"
-#include "ElementData.h"
 
 calc_B_matrix::calc_B_matrix(int val1, Controller &controller)
 {
-
 	elem_id = val1;
 
-	Node1 = controller.getNode1(elem_id);
+	Node1 = controller.getNode1(elem_id-1);
 
-	x1 = controller.getXcoord(Node1);
-	y1 = controller.getYcoord(Node1);
-	
+	x1 = controller.getXcoord(Node1-1);
+	y1 = controller.getYcoord(Node1-1);
 
-		/*
-code for cal_bmatrix, based on pseudo code provided by the professor.
-must be done for all elements.
-will need the zeta[i] and eta[j] information that is currently in cal_kematrix
-*/
+
 	/*
-//define derivatives of nodal equations, N, in terms of zeta (Z) and eta (E)
+	code for cal_bmatrix, based on pseudo code provided by the professor.
+	must be done for all elements.
+	will need the zeta[i] and eta[j] information that is currently in cal_kematrix
+	*/
+	/*
+	//define derivatives of nodal equations, N, in terms of zeta (Z) and eta (E)
 	double dN1_dZ = -.25*(2 * zeta[i] + eta[j])*(eta[j] - 1);
 	double dN1_dE = -.25*(2 * eta[j] + zeta[i])*(zeta[i] - 1);
 	double dN2_dZ = zeta[i] * (eta[j] - 1);
@@ -51,9 +49,9 @@ will need the zeta[i] and eta[j] information that is currently in cal_kematrix
 	h = elementData[k].Node8;
 	*/
 
-		/*
+	/*
 	//get nodal coords
-		double x1 = nodeData[a].x;
+	double x1 = nodeData[a].x;
 	double y1 = nodeData[a].y;
 	double x2 = nodeData[b].x;
 	double y2 = nodeData[b].y;
@@ -85,8 +83,8 @@ will need the zeta[i] and eta[j] information that is currently in cal_kematrix
 	//invert Jacobian  NEED TO CREATE INVERSE FUNCTION
 	minverse_function(Jacobian, Jacobian_inverse)
 
-		//Place derivatives in vectors
-		double vectorN1[2][1];
+	//Place derivatives in vectors
+	double vectorN1[2][1];
 	double vectorN2[2][1];
 	double vectorN3[2][1];
 	double vectorN4[2][1];
@@ -113,35 +111,35 @@ will need the zeta[i] and eta[j] information that is currently in cal_kematrix
 
 	//Multiply inverse jacobian by local vectors to get global vectors NEED TO CREATE MULTIPLICATION FUNCTION
 	mmult_function(Jacobian_inverse, vectorN1, r, s, t, gN1vector)
-		dN1_dx = gN1vector[0][0];
+	dN1_dx = gN1vector[0][0];
 	dN1_dy = gN1vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN2, r, s, t, gN2vector)
-		dN2_dx = gN2vector[0][0];
+	dN2_dx = gN2vector[0][0];
 	dN2_dy = gN2vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN3, r, s, t, gN3vector)
-		dN3_dx = gN3vector[0][0];
+	dN3_dx = gN3vector[0][0];
 	dN3_dy = gN3vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN4, r, s, t, gN4vector)
-		dN4_dx = gN4vector[0][0];
+	dN4_dx = gN4vector[0][0];
 	dN4_dy = gN4vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN5, r, s, t, gN5vector)
-		dN5_dx = gN5vector[0][0];
+	dN5_dx = gN5vector[0][0];
 	dN5_dy = gN5vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN6, r, s, t, gN6vector)
-		dN6_dx = gN6vector[0][0];
+	dN6_dx = gN6vector[0][0];
 	dN6_dy = gN6vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN7, r, s, t, gN7vector)
-		dN7_dx = gN7vector[0][0];
+	dN7_dx = gN7vector[0][0];
 	dN7_dy = gN7vector[1][0];
 
 	mmult_function(Jacobian_inverse, vectorN8, r, s, t, gN8vector)
-		dN8_dx = gN8vector[0][0];
+	dN8_dx = gN8vector[0][0];
 	dN8_dy = gN8vector[1][0];
 
 	//create and populate B matrix
@@ -214,10 +212,10 @@ will need the zeta[i] and eta[j] information that is currently in cal_kematrix
 	//double loop to create B transpose matrix
 	for (int p = 0; p < 4; p++)
 	{
-		for (int q = 0; q < 16; q++)
-		{
-			B_transpose[j][i] = B_matrix[i][j];
-		}
+	for (int q = 0; q < 16; q++)
+	{
+	B_transpose[j][i] = B_matrix[i][j];
+	}
 	}
 
 	*/

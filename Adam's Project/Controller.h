@@ -37,7 +37,7 @@ public:
 
 	//Get values for calculating B_matrix
 	int getElemID(int i);
-	double getNode1(int i);
+	int getNode1(int i);
 	double getNode2(int i);
 	double getNode3(int i);
 	double getNode4(int i);

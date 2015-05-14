@@ -223,7 +223,7 @@ int Controller::getElemID(int i)
 	return elementData[i].id;
 }
 
-double Controller::getNode1(int i)
+int Controller::getNode1(int i)
 {
 	return elementData[i].Node1;
 }
