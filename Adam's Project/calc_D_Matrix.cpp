@@ -78,6 +78,11 @@ calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &con
 	}
 }
 
+double calc_D_matrix::getDmatrix()
+{
+	return D_matrix[4][4];
+}
+
 void calc_D_matrix::printData(ostream &out) const
 {
 	for (int i = 0; i <4; i++)

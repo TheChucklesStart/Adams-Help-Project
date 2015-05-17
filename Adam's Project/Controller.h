@@ -38,13 +38,13 @@ public:
 	//Get values for calculating B_matrix
 	int getElemID(int i);
 	int getNode1(int i);
-	double getNode2(int i);
-	double getNode3(int i);
-	double getNode4(int i);
-	double getNode5(int i);
-	double getNode6(int i);
-	double getNode7(int i);
-	double getNode8(int i);
+	int getNode2(int i);
+	int getNode3(int i);
+	int getNode4(int i);
+	int getNode5(int i);
+	int getNode6(int i);
+	int getNode7(int i);
+	int getNode8(int i);
 	double getXcoord(int i);
 	double getYcoord(int i);
 	

@@ -227,32 +227,31 @@ int Controller::getNode1(int i)
 {
 	return elementData[i].Node1;
 }
-
-double Controller::getNode2(int i)
+int Controller::getNode2(int i)
 {
 	return elementData[i].Node2;
 }
-double Controller::getNode3(int i)
+int Controller::getNode3(int i)
 {
 	return elementData[i].Node3;
 }
-double Controller::getNode4(int i)
+int Controller::getNode4(int i)
 {
 	return elementData[i].Node4;
 }
-double Controller::getNode5(int i)
+int Controller::getNode5(int i)
 {
 	return elementData[i].Node5;
 }
-double Controller::getNode6(int i)
+int Controller::getNode6(int i)
 {
 	return elementData[i].Node6;
 }
-double Controller::getNode7(int i)
+int Controller::getNode7(int i)
 {
 	return elementData[i].Node7;
 }
-double Controller::getNode8(int i)
+int Controller::getNode8(int i)
 {
 	return elementData[i].Node8;
 }

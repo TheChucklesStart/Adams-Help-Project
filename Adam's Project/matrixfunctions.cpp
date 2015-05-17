@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double MatrixFunctions::f_gauss_jordan_elim(int n, double m_coeff[][10], double b[], double x[])
+double MatrixFunctions::invert(int n, double m_coeff[][2], double b[], double x[])
 // this function uses the Gauss-Jordan elimination with pivoting to solve simultaneous linear equations
 {
 	/*
@@ -117,11 +117,29 @@ double MatrixFunctions::f_gauss_jordan_elim(int n, double m_coeff[][10], double 
 	for (i = 0; i < n; i++) {	//copy the solution vector to x
 		x[i] = b[i];
 	}
-
-	return 0; //matriux inversion is completed successfully
 }
 
-void MatrixFunctions::multiply(int r, int s, int t, double inMatrix1[][10], double inMatrix2[][10], double outMatrix[][10])
+void MatrixFunctions::multiplyA(int r, int s, int t, double inMatrix1[][2], double inMatrix2[][1], double outMatrix[][1])
+{
+	for (int i = 0; i < r;i++)
+		for (int j = 0; j < t;j++)
+		for (int k = 0; k < s;k++)
+		{
+			outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
+		}
+}
+
+void MatrixFunctions::multiplyB(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][4], double outMatrix[][4])
+{
+	for (int i = 0; i < r;i++)
+		for (int j = 0; j < t;j++)
+		for (int k = 0; k < s;k++)
+		{
+			outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
+		}
+}
+
+void MatrixFunctions::multiplyC(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][16], double outMatrix[][16])
 {
 	for (int i = 0; i < r;i++)
 		for (int j = 0; j < t;j++)

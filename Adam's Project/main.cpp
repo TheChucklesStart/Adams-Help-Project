@@ -1,6 +1,7 @@
 // ReadFile.cpp : Defines the entry point for the console application.
 #include "stdafx.h"
 #include "calc_D_matrix.h"
+#include "calc_M_matrix.h"
 #include "calc_B_matrix.h"
 #include "Controller.h"
 
@@ -25,6 +26,7 @@ int main(int argc, char* argv[])
 	system("pause");
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
 	calc_B_matrix trial(controller.getElemID(0), controller);
+	calc_M_matrix(trial.getBmatrix(), trial.getBtranspose(), trial.getJacobianDet(), test.getDmatrix(), trial, test);
 	test.printData(cout);
 	trial.printData(cout);
 	//cout << controller.getProbType() << endl;

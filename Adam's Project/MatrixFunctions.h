@@ -5,6 +5,8 @@ using namespace std;
 class MatrixFunctions
 {
 public:
-	double f_gauss_jordan_elim(int n, double m_coeff[][10], double b[], double x[]);
-	void multiply(int r, int s, int t, double inMatrix1[][10], double inMatrix2[][10], double outMatrix[][10]);
+	double invert(int n, double m_coeff[][2], double b[], double x[]);
+	void multiplyA(int r, int s, int t, double inMatrix1[][2], double inMatrix2[][1], double outMatrix[][1]);
+	void multiplyB(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][4], double outMatrix[][4]);
+	void multiplyC(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][16], double outMatrix[][16]);
 };
