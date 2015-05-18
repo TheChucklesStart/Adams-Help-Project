@@ -33,18 +33,18 @@ protected:
 	double y7;
 	double x8;
 	double y8;
-	double Jacobian[2][2];
-	double B_transpose[16][4];
-	double B_matrix[4][16];
+	double **Jacobian;
+	double **B_transpose;
+	double **B_matrix;
 	double det_Jacob;
 
 public:
 	calc_B_matrix(int val1, Controller &controller);
-	//~calc_D_matrix();
+	~calc_B_matrix();
 
 	//Functions
-	double getBmatrix();
-	double getBtranspose();
+	double** getBmatrix();
+	double** getBtranspose();
 	double getJacobianDet();
 	void printData(ostream &out) const;
 };

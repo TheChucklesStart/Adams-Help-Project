@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double MatrixFunctions::invert(int n, double m_coeff[][2], double b[], double x[])
+double MatrixFunctions::invert(int n, double **m_coeff, double b[], double x[])
 // this function uses the Gauss-Jordan elimination with pivoting to solve simultaneous linear equations
 {
 	/*
@@ -119,32 +119,52 @@ double MatrixFunctions::invert(int n, double m_coeff[][2], double b[], double x[
 	}
 }
 
-void MatrixFunctions::multiplyA(int r, int s, int t, double inMatrix1[][2], double inMatrix2[][1], double outMatrix[][1])
+void MatrixFunctions::multiply(int r, int s, double **inMatrix, double *inVector, double *outVector)
 {
-	for (int i = 0; i < r;i++)
-		for (int j = 0; j < t;j++)
-		for (int k = 0; k < s;k++)
+	for (int i = 0; i < r; i++)
+		outVector[i] = 0;
+
+	for (int i = 0; i < r; i++)
+		for (int k = 0; k < s; k++)
 		{
-			outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
+			outVector[i] += inMatrix[i][k] * inVector[k];
 		}
 }
 
-void MatrixFunctions::multiplyB(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][4], double outMatrix[][4])
+void MatrixFunctions::multiply(int r, int s, int t, double **inMatrix1, double **inMatrix2, double **outMatrix)
 {
-	for (int i = 0; i < r;i++)
-		for (int j = 0; j < t;j++)
-		for (int k = 0; k < s;k++)
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < t; j++)
 		{
-			outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
+			outMatrix[i][j] = 0;
 		}
+	}
+
+	for (int i = 0; i < r; i++)
+	{
+		for (int j = 0; j < t; j++)
+		{
+			for (int k = 0; k < s; k++)
+			{
+				outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
+			}
+		}
+	}
 }
 
-void MatrixFunctions::multiplyC(int r, int s, int t, double inMatrix1[][4], double inMatrix2[][16], double outMatrix[][16])
+double** MatrixFunctions::allocateMatrix(int rows, int columns)
 {
-	for (int i = 0; i < r;i++)
-		for (int j = 0; j < t;j++)
-		for (int k = 0; k < s;k++)
-		{
-			outMatrix[i][j] += inMatrix1[i][k] * inMatrix2[k][j];
-		}
+	double** result = new double*[rows];
+	for (int i = 0; i < rows; i++)
+		result[i] = new double[columns];
+	return result;
+}
+
+void MatrixFunctions::deleteMatrix(double** &matrix, int rows, int columns)
+{
+	for (int i = 0; i < rows; i++)
+		delete[] matrix[i];
+	delete[] matrix;
+	matrix = NULL;
 }

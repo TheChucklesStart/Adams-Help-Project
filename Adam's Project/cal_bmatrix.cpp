@@ -5,6 +5,10 @@
 
 calc_B_matrix::calc_B_matrix(int val1, Controller &controller)
 {
+	Jacobian = MatrixFunctions::allocateMatrix(2, 2);
+	B_transpose = MatrixFunctions::allocateMatrix(16, 4);
+	B_matrix = MatrixFunctions::allocateMatrix(4, 16);
+
 	//Get element ID
 	elem_id = val1;
 	//Get element nodes
@@ -84,69 +88,68 @@ calc_B_matrix::calc_B_matrix(int val1, Controller &controller)
 			
 			//Place derivatives in vectors
 			double vectorN1[2];
-			double vectorN2[2][1];
-			double vectorN3[2][1];
-			double vectorN4[2][1];
-			double vectorN5[2][1];
-			double vectorN6[2][1];
-			double vectorN7[2][1];
-			double vectorN8[2][1];
+			double vectorN2[2];
+			double vectorN3[2];
+			double vectorN4[2];
+			double vectorN5[2];
+			double vectorN6[2];
+			double vectorN7[2];
+			double vectorN8[2];
 			vectorN1[0] = dN1_dZ;
 			vectorN1[1] = dN1_dE;
-			vectorN2[0][0] = dN2_dZ;
-			vectorN2[1][0] = dN2_dE;
-			vectorN3[0][0] = dN3_dZ;
-			vectorN3[1][0] = dN3_dE;
-			vectorN4[0][0] = dN4_dZ;
-			vectorN4[1][0] = dN4_dE;
-			vectorN5[0][0] = dN5_dZ;
-			vectorN5[1][0] = dN5_dE;
-			vectorN6[0][0] = dN6_dZ;
-			vectorN6[1][0] = dN6_dE;
-			vectorN7[0][0] = dN7_dZ;
-			vectorN7[1][0] = dN7_dE;
-			vectorN8[0][0] = dN8_dZ;
-			vectorN8[1][0] = dN8_dE;
+			vectorN2[0] = dN2_dZ;
+			vectorN2[1] = dN2_dE;
+			vectorN3[0] = dN3_dZ;
+			vectorN3[1] = dN3_dE;
+			vectorN4[0] = dN4_dZ;
+			vectorN4[1] = dN4_dE;
+			vectorN5[0] = dN5_dZ;
+			vectorN5[1] = dN5_dE;
+			vectorN6[0] = dN6_dZ;
+			vectorN6[1] = dN6_dE;
+			vectorN7[0] = dN7_dZ;
+			vectorN7[1] = dN7_dE;
+			vectorN8[0] = dN8_dZ;
+			vectorN8[1] = dN8_dE;
 
 			//Declare global vectors
 			double gN1vector[2];
-			double gN2vector[2][1];
-			double gN3vector[2][1];
-			double gN4vector[2][1];
-			double gN5vector[2][1];
-			double gN6vector[2][1];
-			double gN7vector[2][1];
-			double gN8vector[2][1];
+			double gN2vector[2];
+			double gN3vector[2];
+			double gN4vector[2];
+			double gN5vector[2];
+			double gN6vector[2];
+			double gN7vector[2];
+			double gN8vector[2];
 
 			//Call matrix functions class for finding inverse of Jacobian, dN/dx, and dN/dy
-			MatrixFunctions Boperations;
-			Boperations.invert(2, Jacobian, vectorN1, gN1vector);
+			MatrixFunctions::invert(2, Jacobian, vectorN1, gN1vector);
 			//operations.multiply(2,2,1, Jacobian, vectorN1, gN1vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN2, gN2vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN3, gN3vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN4, gN4vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN5, gN5vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN6, gN6vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN7, gN7vector);
-			Boperations.multiplyA(2, 2, 1, Jacobian, vectorN8, gN8vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN2, gN2vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN3, gN3vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN4, gN4vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN5, gN5vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN6, gN6vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN7, gN7vector);
+			MatrixFunctions::multiply(2, 2, Jacobian, vectorN8, gN8vector);
 
 			//Collect dN/dx and dN/dy terms
 			double dN1_dx = gN1vector[0];
 			double dN1_dy = gN1vector[1];
-			double dN2_dx = gN2vector[0][0];
-			double dN2_dy = gN2vector[1][0];
-			double dN3_dx = gN3vector[0][0];
-			double dN3_dy = gN3vector[1][0];
-			double dN4_dx = gN4vector[0][0];
-			double dN4_dy = gN4vector[1][0];
-			double dN5_dx = gN5vector[0][0];
-			double dN5_dy = gN5vector[1][0];
-			double dN6_dx = gN6vector[0][0];
-			double dN6_dy = gN6vector[1][0];
-			double dN7_dx = gN7vector[0][0];
-			double dN7_dy = gN7vector[1][0];
-			double dN8_dx = gN8vector[0][0];
-			double dN8_dy = gN8vector[1][0];
+			double dN2_dx = gN2vector[0];
+			double dN2_dy = gN2vector[1];
+			double dN3_dx = gN3vector[0];
+			double dN3_dy = gN3vector[1];
+			double dN4_dx = gN4vector[0];
+			double dN4_dy = gN4vector[1];
+			double dN5_dx = gN5vector[0];
+			double dN5_dy = gN5vector[1];
+			double dN6_dx = gN6vector[0];
+			double dN6_dy = gN6vector[1];
+			double dN7_dx = gN7vector[0];
+			double dN7_dy = gN7vector[1];
+			double dN8_dx = gN8vector[0];
+			double dN8_dy = gN8vector[1];
 
 			//create and populate B matrix
 			B_matrix[0][0] = dN1_dx;
@@ -226,6 +229,13 @@ calc_B_matrix::calc_B_matrix(int val1, Controller &controller)
 	}	
 }
 
+calc_B_matrix::~calc_B_matrix()
+{
+	MatrixFunctions::deleteMatrix(Jacobian, 2, 2);
+	MatrixFunctions::deleteMatrix(B_transpose, 16, 4);
+	MatrixFunctions::deleteMatrix(B_matrix, 4, 16);
+}
+
 //Get determinant of Jacobian
 double calc_B_matrix::getJacobianDet()
 {
@@ -233,15 +243,15 @@ double calc_B_matrix::getJacobianDet()
 }
 
 //Get B matrix
-double calc_B_matrix::getBmatrix()
+double** calc_B_matrix::getBmatrix()
 {
-	return B_matrix[4][16];
+	return B_matrix;
 }
 
 //Get transpose of B matrix
-double calc_B_matrix::getBtranspose()
+double** calc_B_matrix::getBtranspose()
 {
-	return B_transpose[16][4];
+	return B_transpose;
 }
 //Print info for checking purposes
 void calc_B_matrix::printData(ostream &out) const

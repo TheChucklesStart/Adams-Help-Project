@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "Controller.h"
+#include "MatrixFunctions.h"
 #include <iostream>
 using namespace std;
 
@@ -9,18 +10,18 @@ class calc_D_matrix: public Controller
 {
 protected:
 	double coeff;
-	double stiffness[4][4];
-	double D_matrix[4][4];
+	double** stiffness;
+	double** D_matrix;
 	int ProblemType;
 	double YM;
 	double Poisson;
 
 public:
 	calc_D_matrix(int val1, double val2, double val3, Controller &controller);
-	//~calc_D_matrix();
+	~calc_D_matrix();
 	
 	//Functions
-	double getDmatrix();
+	double** getDmatrix();
 	void printData(ostream &out) const;
 };
 

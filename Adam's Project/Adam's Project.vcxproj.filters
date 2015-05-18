@@ -39,6 +39,9 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_bmatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_mmatrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp">
@@ -71,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_M_matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

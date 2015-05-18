@@ -4,6 +4,9 @@
 
 calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &controller)
 {
+	stiffness = MatrixFunctions::allocateMatrix(4, 4);
+	D_matrix = MatrixFunctions::allocateMatrix(4, 4);
+
 	ProblemType = val1;
 	YM = val2;
 	Poisson = val3;
@@ -78,9 +81,15 @@ calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &con
 	}
 }
 
-double calc_D_matrix::getDmatrix()
+calc_D_matrix::~calc_D_matrix()
 {
-	return D_matrix[4][4];
+	MatrixFunctions::deleteMatrix(stiffness, 4, 4);
+	MatrixFunctions::deleteMatrix(D_matrix, 4, 4);
+}
+
+double** calc_D_matrix::getDmatrix()
+{
+	return D_matrix;
 }
 
 void calc_D_matrix::printData(ostream &out) const

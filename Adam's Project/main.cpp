@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 	system("pause");
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
 	calc_B_matrix trial(controller.getElemID(0), controller);
-	calc_M_matrix(trial.getBmatrix(), trial.getBtranspose(), trial.getJacobianDet(), test.getDmatrix(), trial, test);
+	calc_M_matrix value(trial, test);
 	test.printData(cout);
 	trial.printData(cout);
 	//cout << controller.getProbType() << endl;

@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_bmatrix.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_mmatrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\matrixfunctions.cpp" />
@@ -82,6 +83,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_B_matrix.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_M_matrix.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\MatrixFunctions.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.h" />
