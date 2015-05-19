@@ -72,6 +72,7 @@
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_kematrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_mmatrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Element.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\matrixfunctions.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.cpp" />
@@ -87,6 +88,7 @@
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_Ke_matrix.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_M_matrix.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Element.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\MatrixFunctions.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\targetver.h" />

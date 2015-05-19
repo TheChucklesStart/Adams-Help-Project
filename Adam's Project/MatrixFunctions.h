@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <iostream>
 
 class MatrixFunctions
 {
@@ -9,4 +10,5 @@ public:
 	static void multiply(int r, int s, int t, double **inMatrix1, double **inMatrix2, double **outMatrix);
 	static double** allocateMatrix(int rows, int columns);
 	static void deleteMatrix(double** &matrix, int rows, int columns);
+	static void printMatrix(double** &matrix, int rows, int columns, std::ostream &out);
 };

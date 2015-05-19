@@ -71,6 +71,7 @@ void Controller::readData(string fileName)
 	elementData = new ElementData[numElements];
 	for (int i = 0; i < numElements; i++)
 	{
+		elementData[i].controller = this;
 		myfile >> elementData[i].id;
 		myfile >> elementData[i].material;
 		myfile >> elementData[i].Node1;

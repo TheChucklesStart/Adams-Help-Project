@@ -3,10 +3,11 @@
 #include "stdafx.h"
 #include "Controller.h"
 #include "MatrixFunctions.h"
+#include "Element.h"
 #include <iostream>
 using namespace std;
 
-class calc_D_matrix: public Controller
+class calc_D_matrix
 {
 protected:
 	double coeff;

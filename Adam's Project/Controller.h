@@ -5,8 +5,10 @@
 #include <string>
 #include "BasicStructures.h"
 #include "ExceptionList.h"
+#include "Element.h"
 using namespace std;
 
+class ElementData;
 class Controller
 {
 protected:
@@ -56,6 +58,4 @@ public:
 
 	// This method writes out all of the data so we can verify correctness
 	void writeData(string fileName);
-
-	void elementCoordinateConversion();
 };

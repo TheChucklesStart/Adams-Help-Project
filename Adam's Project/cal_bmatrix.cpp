@@ -3,40 +3,29 @@
 #include "calc_B_matrix.h"
 #include "MatrixFunctions.h"
 
-calc_B_matrix::calc_B_matrix(int val1, Controller &controller, double eta, double zeta)
+calc_B_matrix::calc_B_matrix(ElementData &element, Controller &controller, double eta, double zeta)
 {
 	Jacobian = MatrixFunctions::allocateMatrix(2, 2);
 	B_transpose = MatrixFunctions::allocateMatrix(16, 4);
 	B_matrix = MatrixFunctions::allocateMatrix(4, 16);
 
-	//Get element ID
-	elem_id = val1;
-	//Get element nodes
-	Node1 = controller.getNode1(elem_id - 1);
-	Node2 = controller.getNode2(elem_id - 1);
-	Node3 = controller.getNode3(elem_id - 1);
-	Node4 = controller.getNode4(elem_id - 1);
-	Node5 = controller.getNode5(elem_id - 1);
-	Node6 = controller.getNode6(elem_id - 1);
-	Node7 = controller.getNode7(elem_id - 1); 
-	Node8 = controller.getNode8(elem_id - 1);
 	//Get nodal coordinates
-	x1 = controller.getXcoord(Node1 - 1);
-	y1 = controller.getYcoord(Node1 - 1);
-	x2 = controller.getXcoord(Node2 - 1);
-	y2 = controller.getYcoord(Node2 - 1);
-	x3 = controller.getXcoord(Node3 - 1);
-	y3 = controller.getYcoord(Node3 - 1);
-	x4 = controller.getXcoord(Node4 - 1);
-	y4 = controller.getYcoord(Node4 - 1);
-	x5 = controller.getXcoord(Node5 - 1);
-	y5 = controller.getYcoord(Node5 - 1);
-	x6 = controller.getXcoord(Node6 - 1);
-	y6 = controller.getYcoord(Node6 - 1);
-	x7 = controller.getXcoord(Node7 - 1);
-	y7 = controller.getYcoord(Node7 - 1);
-	x8 = controller.getXcoord(Node8 - 1);
-	y8 = controller.getYcoord(Node8 - 1);
+	x1 = controller.getXcoord(element.Node1 - 1);
+	y1 = controller.getYcoord(element.Node1 - 1);
+	x2 = controller.getXcoord(element.Node2 - 1);
+	y2 = controller.getYcoord(element.Node2 - 1);
+	x3 = controller.getXcoord(element.Node3 - 1);
+	y3 = controller.getYcoord(element.Node3 - 1);
+	x4 = controller.getXcoord(element.Node4 - 1);
+	y4 = controller.getYcoord(element.Node4 - 1);
+	x5 = controller.getXcoord(element.Node5 - 1);
+	y5 = controller.getYcoord(element.Node5 - 1);
+	x6 = controller.getXcoord(element.Node6 - 1);
+	y6 = controller.getYcoord(element.Node6 - 1);
+	x7 = controller.getXcoord(element.Node7 - 1);
+	y7 = controller.getYcoord(element.Node7 - 1);
+	x8 = controller.getXcoord(element.Node8 - 1);
+	y8 = controller.getYcoord(element.Node8 - 1);
 
 	double weight[2] = { 1, 1 };
 
@@ -248,7 +237,7 @@ double** calc_B_matrix::getBtranspose()
 //Print info for checking purposes
 void calc_B_matrix::printData(ostream &out) const
 {
-	out << elem_id << endl;
+	/*out << elem_id << endl;
 	out << Node1 << " " << Node2 << " " << Node3 << " " << Node4 << " " << Node5 << " " << Node6 << " " << Node7 << " " << Node8 << endl;
 	out << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << " " << x7 << " " << x8 << endl;
 	out << y1 << " " << y2 << " " << y3 << " " << y4 << " " << y5 << " " << y6 << " " << y7 << " " << y8 << endl;
@@ -259,5 +248,5 @@ void calc_B_matrix::printData(ostream &out) const
 			out << Jacobian[i][j] << " ";
 		}
 		out << endl;
-	}
+	}*/
 }

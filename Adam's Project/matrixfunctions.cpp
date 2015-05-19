@@ -168,3 +168,15 @@ void MatrixFunctions::deleteMatrix(double** &matrix, int rows, int columns)
 	delete[] matrix;
 	matrix = NULL;
 }
+
+void MatrixFunctions::printMatrix(double **& matrix, int rows, int columns, std::ostream &out)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < columns; j++)
+		{
+			out << matrix[i][j] << "\t";
+		}
+		out << std::endl;
+	}
+}

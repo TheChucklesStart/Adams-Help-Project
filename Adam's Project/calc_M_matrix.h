@@ -4,6 +4,7 @@
 #include "Controller.h"
 #include "calc_B_matrix.h"
 #include "calc_D_matrix.h"
+#include "Element.h"
 #include <iostream>
 using namespace std;
 

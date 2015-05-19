@@ -4,12 +4,9 @@
 #include "calc_M_matrix.h"
 #include "MatrixFunctions.h"
 
-calc_Ke_matrix::calc_Ke_matrix(Controller &controller, calc_M_matrix &calc_M_matrix)
+calc_Ke_matrix::calc_Ke_matrix(ElementData &element, double thickness, calc_D_matrix &D_matrix)
 {
 	Ke_matrix = MatrixFunctions::allocateMatrix(16, 16);
-	thickness = controller.getThickness();
-	M_matrix = calc_M_matrix.getMmatrix();
-
 		
 	//define gaussian points and weights THESE WILL BE NEEDED BY AT LEAST 3 FUNCTIONS :THIS ONE (CAL_STIFFNESS_MATRIX), CAL_BMATRIX, and CAL_MMATRIX
 	double zeta[2];
@@ -37,12 +34,14 @@ calc_Ke_matrix::calc_Ke_matrix(Controller &controller, calc_M_matrix &calc_M_mat
 	{
 		for (int i = 0; i < 2; i++)
 		{
+			calc_B_matrix B_matrix = element.get_B_matrix(eta[i], zeta[j]);
+			calc_M_matrix M_matrix = element.get_M_matrix(B_matrix, D_matrix);
 			//double loop to go through all 16x16 coeffs for ke_matrix and add contribution from each Gaussian point
 			for (int p = 0; p < 16; p++)
 			{
 				for (int q = 0; q < 16; q++)
 				{
-					Ke_matrix[p][q] = Ke_matrix[p][q] + thickness * M_matrix[p][q] * weight[i] * weight[j];
+					Ke_matrix[p][q] += thickness * M_matrix.getMmatrix()[p][q] * weight[i] * weight[j];
 				}
 			}
 		}

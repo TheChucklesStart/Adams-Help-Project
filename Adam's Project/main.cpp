@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 	double **the = MatrixFunctions::allocateMatrix(3, 3);
 	double **teh = MatrixFunctions::allocateMatrix(3, 3);
 
-	for (i = 0; i < 3; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
@@ -35,16 +35,28 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	MatrixFunctions::printMatrix(the, 3, 3, cout);
+	cout << endl;
+
 	MatrixFunctions::multiply(3, 3, 3, the, the, teh);
+
+
+	MatrixFunctions::printMatrix(the, 3, 3, cout);
+	cout << endl;
+	MatrixFunctions::printMatrix(teh, 3, 3, cout);
+	cout << endl;
 
 	system("pause");
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
-	calc_B_matrix trial(controller.getElemID(0), controller,1,1);
+	/*calc_B_matrix trial(controller.getElemID(0), controller,1,1);
 	calc_M_matrix value(trial, test);
-	calc_Ke_matrix result(controller, value);
+	calc_Ke_matrix result(controller, value);*/
+
+	//controller.getElemID(0)
+
 	//test.printData(cout);
-	trial.printData(cout);
-	value.printData(cout);
+	//trial.printData(cout);
+	//value.printData(cout);
 	//cout << controller.getProbType() << endl;
 	//cout << controller.getYM() << endl;
 	//cout << controller.getPoisson() << endl;

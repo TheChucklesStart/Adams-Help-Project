@@ -1,22 +1,10 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Controller.h"
-#include <iostream>
-using namespace std;
 
-class calc_B_matrix : public Controller
+class calc_B_matrix
 {
 protected:
-	int elem_id;
-	int Node1;
-	int Node2;
-	int Node3;
-	int Node4;
-	int Node5;
-	int Node6;
-	int Node7;
-	int Node8;
 	double x1;
 	double y1;
 	double x2;
@@ -39,7 +27,7 @@ protected:
 	double det_Jacob;
 
 public:
-	calc_B_matrix(int val1, Controller &controller, double eta, double zeta);
+	calc_B_matrix(ElementData &element, Controller &controller, double eta, double zeta);
 	~calc_B_matrix();
 
 	//Functions

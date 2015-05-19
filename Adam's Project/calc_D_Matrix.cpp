@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "calc_D_matrix.h"
-#include "Controller.h"
 
 calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &controller)
 {
@@ -77,7 +76,7 @@ calc_D_matrix::calc_D_matrix(int val1, double val2, double val3, Controller &con
 
 	else
 	{
-		cout << "Problem Type " << probType << " not recognised." << endl;
+		cout << "Problem Type " << ProblemType << " not recognised." << endl;
 	}
 }
 

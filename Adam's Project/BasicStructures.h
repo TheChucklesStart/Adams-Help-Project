@@ -27,25 +27,6 @@ public:
 	double l;
 };
 
-// this class is supposed to contain all of the data that belongs to the element rows in the source file.
-class ElementData
-{
-public:
-	int id;
-	// TODO give these proper names and comments, visual studio should do start renaming
-	int material;
-	double Node1;
-	double Node2;
-	double Node3;
-	double Node4;
-	double Node5;
-	double Node6;
-	double Node7;
-	double Node8;
-
-	void convertCoordinates();
-};
-
 // this is a class that represents nodes as it seems they are defined in the input data.
 class NodeData
 {
