@@ -39,7 +39,7 @@ protected:
 	double det_Jacob;
 
 public:
-	calc_B_matrix(int val1, Controller &controller);
+	calc_B_matrix(int val1, Controller &controller, double eta, double zeta);
 	~calc_B_matrix();
 
 	//Functions

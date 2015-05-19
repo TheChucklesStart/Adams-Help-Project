@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 	calc_Ke_matrix result(controller, value);
 	test.printData(cout);
 	trial.printData(cout);
-	//result.printData(cout);
+	result.printData(cout);
 	//cout << controller.getProbType() << endl;
 	//cout << controller.getYM() << endl;
 	//cout << controller.getPoisson() << endl;
