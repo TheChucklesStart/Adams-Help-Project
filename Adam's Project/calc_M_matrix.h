@@ -20,6 +20,6 @@ public:
 	~calc_M_matrix();
 
 	//Functions
-	double getMmatrix();
+	double** getMmatrix();
 	void printData(ostream &out) const;
 };

@@ -8,7 +8,7 @@ calc_Ke_matrix::calc_Ke_matrix(Controller &controller, calc_M_matrix &calc_M_mat
 {
 	Ke_matrix = MatrixFunctions::allocateMatrix(16, 16);
 	thickness = controller.getThickness();
-	M_matrix[16][16] = calc_M_matrix.getMmatrix();
+	M_matrix = calc_M_matrix.getMmatrix();
 		
 	//define gaussian points and weights THESE WILL BE NEEDED BY AT LEAST 3 FUNCTIONS :THIS ONE (CAL_STIFFNESS_MATRIX), CAL_BMATRIX, and CAL_MMATRIX
 	double zeta[2];
