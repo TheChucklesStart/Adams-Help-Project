@@ -24,6 +24,18 @@ int main(int argc, char* argv[])
 	// read in our input file
 	controller.readData(file_name);
 
+	double **the = MatrixFunctions::allocateMatrix(3, 3);
+	double **teh = MatrixFunctions::allocateMatrix(3, 3);
+
+	for (i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+		}
+	}
+
+	MatrixFunctions::multiply(3, 3, 3, the, the, teh);
+
 	system("pause");
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
 	calc_B_matrix trial(controller.getElemID(0), controller,1,1);
