@@ -75,7 +75,7 @@ calc_B_matrix::calc_B_matrix(int val1, Controller &controller, double eta, doubl
 	Jacobian[0][0] = dx_dZ;
 	Jacobian[0][1] = dx_dE;
 	Jacobian[1][0] = dy_dZ;
-	Jacobian[1][0] = dy_dE;
+	Jacobian[1][1] = dy_dE;
 
 	//calculate determiniate
 	det_Jacob = dx_dZ*dy_dE - dx_dE*dy_dZ;
@@ -212,9 +212,9 @@ calc_B_matrix::calc_B_matrix(int val1, Controller &controller, double eta, doubl
 	B_matrix[3][15] = dN8_dx;
 
 	//double loop to create B transpose matrix
-	for (int p = 0; p < 4; p++)
+	for (int i = 0; i < 4; i++)
 	{
-		for (int q = 0; q < 16; q++)
+		for (int j = 0; j < 16; j++)
 		{
 			B_transpose[j][i] = B_matrix[i][j];
 		}
