@@ -13,7 +13,7 @@ class calc_Ke_matrix
 protected:
 	//int elem_id;
 	double **Ke_matrix;
-	double M_matrix[16][16];
+	double **M_matrix;
 	double thickness;
 
 public:
