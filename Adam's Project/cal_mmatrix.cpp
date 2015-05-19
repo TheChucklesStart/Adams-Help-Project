@@ -31,9 +31,9 @@ calc_M_matrix::~calc_M_matrix()
 	MatrixFunctions::deleteMatrix(temp_matrix2, 16, 16);
 }
 
-double calc_M_matrix::getMmatrix()
+double** calc_M_matrix::getMmatrix()
 {
-	return M_matrix[16][16];
+	return M_matrix;
 }
 
 void calc_M_matrix::printData(ostream &out) const
