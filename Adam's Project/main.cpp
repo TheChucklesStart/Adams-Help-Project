@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
 	{
 		for (int j = 0; j < 3; j++)
 		{
+			the[i][j] = 3 * i + j;
 		}
 	}
 
