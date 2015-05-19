@@ -265,3 +265,8 @@ double Controller::getYcoord(int i)
 {
 	return nodeData[i].y;
 }
+
+double Controller::getThickness()
+{
+	return materialData[0].thickness;
+}

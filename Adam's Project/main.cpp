@@ -28,10 +28,10 @@ int main(int argc, char* argv[])
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
 	calc_B_matrix trial(controller.getElemID(0), controller);
 	calc_M_matrix value(trial, test);
-	calc_Ke_matrix result(controller, value);
+	//calc_Ke_matrix result(controller, value);
 	test.printData(cout);
 	trial.printData(cout);
-	result.printData(cout);
+	//result.printData(cout);
 	//cout << controller.getProbType() << endl;
 	//cout << controller.getYM() << endl;
 	//cout << controller.getPoisson() << endl;

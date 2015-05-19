@@ -47,6 +47,9 @@ public:
 	int getNode8(int i);
 	double getXcoord(int i);
 	double getYcoord(int i);
+
+	//Get values for calculating Ke_matrix
+	double getThickness();
 	
 	// This method reads in all of the data from the inp file.
 	void readData(string fileName);
