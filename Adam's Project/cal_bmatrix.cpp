@@ -62,8 +62,8 @@ calc_B_matrix::calc_B_matrix(ElementData &element, Controller &controller, doubl
 	//create Jacobian matrix
 	//Jacobian[2][2] = { dx_dZ, dx_dE, dy_dZ, dy_dE };
 	Jacobian[0][0] = dx_dZ;
-	Jacobian[0][1] = dx_dE;
-	Jacobian[1][0] = dy_dZ;
+	Jacobian[0][1] = dy_dZ;
+	Jacobian[1][0] = dx_dE;
 	Jacobian[1][1] = dy_dE;
 
 	//calculate determiniate

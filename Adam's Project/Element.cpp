@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Element.h"
 
 calc_B_matrix ElementData::get_B_matrix(double eta, double zeta)

@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 
 	// read in our input file
 	controller.readData(file_name);
-
+	/*
 	double **the = MatrixFunctions::allocateMatrix(3, 3);
 	double **teh = MatrixFunctions::allocateMatrix(3, 3);
 
@@ -45,11 +45,12 @@ int main(int argc, char* argv[])
 	cout << endl;
 	MatrixFunctions::printMatrix(teh, 3, 3, cout);
 	cout << endl;
-
+	*/
 	system("pause");
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
-	/*calc_B_matrix trial(controller.getElemID(0), controller,1,1);
-	calc_M_matrix value(trial, test);
+	calc_B_matrix trial(controller.getElemenetClass(), controller, 1, 1);
+	//calc_B_matrix trial(controller.getElemID(0), controller,1,1);
+	/*calc_M_matrix value(trial, test);
 	calc_Ke_matrix result(controller, value);*/
 
 	//controller.getElemID(0)

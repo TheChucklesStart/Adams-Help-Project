@@ -211,7 +211,7 @@ int Controller::getProbType()
 
 double Controller::getYM()
 {
-	return materialData[0].YM*10000000;
+	return materialData[0].YM;
 }
 
 double Controller::getPoisson()
@@ -270,4 +270,9 @@ double Controller::getYcoord(int i)
 double Controller::getThickness()
 {
 	return materialData[0].thickness;
+}
+
+ElementData *Controller::getElemenetClass()
+{
+	return elementData;
 }

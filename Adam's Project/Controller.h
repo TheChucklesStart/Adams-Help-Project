@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 
 #include <iostream>
 #include <fstream>
@@ -49,6 +49,9 @@ public:
 	int getNode8(int i);
 	double getXcoord(int i);
 	double getYcoord(int i);
+
+	//output the ElementData class
+	ElementData *getElemenetClass();
 
 	//Get values for calculating Ke_matrix
 	double getThickness();
