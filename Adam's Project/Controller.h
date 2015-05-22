@@ -50,8 +50,11 @@ public:
 	double getXcoord(int i);
 	double getYcoord(int i);
 
+	int getNumNodes();
+	int getNumElements();
+
 	//output the ElementData class
-	ElementData *getElemenetClass();
+	ElementData getElemenetClass(int i);
 
 	//Get values for calculating Ke_matrix
 	double getThickness();

@@ -272,7 +272,17 @@ double Controller::getThickness()
 	return materialData[0].thickness;
 }
 
-ElementData *Controller::getElemenetClass()
+int Controller::getNumNodes()
 {
-	return elementData;
+	return numNodes;
+}
+
+int Controller::getNumElements()
+{
+	return numElements;
+}
+
+ElementData Controller::getElemenetClass(int i)
+{
+	return elementData[i].controller;
 }
