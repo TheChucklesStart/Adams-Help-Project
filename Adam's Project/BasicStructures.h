@@ -42,7 +42,7 @@ public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
 	int node;
-	string direction;
+	char direction[2];
 	double value;
 };
 
@@ -52,7 +52,7 @@ public:
 	int id;
 	// TODO give these proper names and comments, visual studio should do start renaming
 	int node;
-	string direction;
+	char direction[2];
 	double value;
 };
 

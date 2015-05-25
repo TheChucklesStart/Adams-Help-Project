@@ -47,17 +47,26 @@ int main(int argc, char* argv[])
 	cout << endl;
 	*/
 	system("pause");
+	//Calculate D matrix
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
-	//calc_B_matrix trial(controller.getElemenetClass(), controller, 1, 1);
+	
+	//Calculate element stiffness matrices (K matrices) 
+	for (int i = 0; i < controller.getNumElements();i++)
+	{
+		calc_Ke_matrix result(controller.getElemenetClass(i), controller.getThickness(), test);
+		result.printData(cout);
+		cout << endl << endl << endl;
+	}
+	//calc_B_matrix trial(controller.getElemenetClass(0), controller, 1, 1);
 	//calc_B_matrix trial(controller.getElemID(0), controller,1,1);
-	/*calc_M_matrix value(trial, test);
-	calc_Ke_matrix result(controller, value);*/
+	//calc_M_matrix value(trial, test);
+	
 
 	//controller.getElemID(0)
 
 	//test.printData(cout);
 	//trial.printData(cout);
-	//value.printData(cout);
+	
 	//cout << controller.getProbType() << endl;
 	//cout << controller.getYM() << endl;
 	//cout << controller.getPoisson() << endl;

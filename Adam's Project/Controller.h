@@ -50,11 +50,19 @@ public:
 	double getXcoord(int i);
 	double getYcoord(int i);
 
+	//get values to assemble global matrix
 	int getNumNodes();
 	int getNumElements();
+	int getNumEBCs();
+
+	//get values to assemble load vectors
+	int getPFs();
 
 	//output the ElementData class
 	ElementData getElemenetClass(int i);
+
+	//call the EssentialBCData Class
+	EssentialBCData getEssentialBCClass(int i);
 
 	//Get values for calculating Ke_matrix
 	double getThickness();

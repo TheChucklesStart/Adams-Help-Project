@@ -237,8 +237,8 @@ double** calc_B_matrix::getBtranspose()
 //Print info for checking purposes
 void calc_B_matrix::printData(ostream &out) const
 {
-	/*out << elem_id << endl;
-	out << Node1 << " " << Node2 << " " << Node3 << " " << Node4 << " " << Node5 << " " << Node6 << " " << Node7 << " " << Node8 << endl;
+	//out << elem_id << endl;
+	//out << Node1 << " " << Node2 << " " << Node3 << " " << Node4 << " " << Node5 << " " << Node6 << " " << Node7 << " " << Node8 << endl;
 	out << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << " " << x7 << " " << x8 << endl;
 	out << y1 << " " << y2 << " " << y3 << " " << y4 << " " << y5 << " " << y6 << " " << y7 << " " << y8 << endl;
 	for (int i = 0; i <2; i++)
@@ -248,5 +248,5 @@ void calc_B_matrix::printData(ostream &out) const
 			out << Jacobian[i][j] << " ";
 		}
 		out << endl;
-	}*/
+	}
 }

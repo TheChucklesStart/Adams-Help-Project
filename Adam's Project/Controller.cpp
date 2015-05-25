@@ -204,21 +204,21 @@ void Controller::writeData(string fileName)
 	output.close();
 }
 
+//get infor for D matrix
 int Controller::getProbType()
 {
 	return probType;
 }
-
 double Controller::getYM()
 {
 	return materialData[0].YM;
 }
-
 double Controller::getPoisson()
 {
 	return materialData[0].Poisson;
 }
 
+//get element info
 int Controller::getElemID(int i)
 {
 	return elementData[i].id;
@@ -257,32 +257,50 @@ int Controller::getNode8(int i)
 	return elementData[i].Node8;
 }
 
+//get nodal coords for determining jacobian
 double Controller::getXcoord(int i)
 {
 	return nodeData[i].x;
 }
-
 double Controller::getYcoord(int i)
 {
 	return nodeData[i].y;
 }
 
+//get info for calculating K matrix
 double Controller::getThickness()
 {
 	return materialData[0].thickness;
 }
 
+//get infor for assembling global matrix
 int Controller::getNumNodes()
 {
 	return numNodes;
 }
-
 int Controller::getNumElements()
 {
 	return numElements;
 }
+int Controller::getNumEBCs()
+{
+	return numEBCs;
+}
 
+//get element class
 ElementData Controller::getElemenetClass(int i)
 {
-	return elementData[i].controller;
+	return elementData[i];
+}
+
+//get essential BC class
+EssentialBCData Controller::getEssentialBCClass(int i)
+{
+	return essentialBCData[i];
+}
+
+//get info for creating load vectors
+int Controller::getPFs()
+{
+	return numPFs;
 }
