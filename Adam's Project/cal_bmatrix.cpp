@@ -241,12 +241,13 @@ void calc_B_matrix::printData(ostream &out) const
 	//out << Node1 << " " << Node2 << " " << Node3 << " " << Node4 << " " << Node5 << " " << Node6 << " " << Node7 << " " << Node8 << endl;
 	out << x1 << " " << x2 << " " << x3 << " " << x4 << " " << x5 << " " << x6 << " " << x7 << " " << x8 << endl;
 	out << y1 << " " << y2 << " " << y3 << " " << y4 << " " << y5 << " " << y6 << " " << y7 << " " << y8 << endl;
-	for (int i = 0; i <2; i++)
+	out << det_Jacob << endl;
+	/*for (int i = 0; i <2; i++)
 	{
 		for (int j = 0; j < 2; j++)
 		{
 			out << Jacobian[i][j] << " ";
 		}
 		out << endl;
-	}
+	}*/
 }

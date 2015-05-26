@@ -57,6 +57,9 @@ public:
 
 	//get values to assemble load vectors
 	int getPFs();
+	int getPFNode(int i);
+	char* getPFdirection(int i);
+	double getPFvalue(int i);
 
 	//output the ElementData class
 	ElementData getElemenetClass(int i);

@@ -29,6 +29,7 @@ Controller::~Controller()
 	if (naturalBCData != NULL) delete[] naturalBCData;
 }
 
+//read in data from input file
 void Controller::readData(string fileName)
 {
 	string line;
@@ -52,7 +53,6 @@ void Controller::readData(string fileName)
 	materialData = new MaterialData[numMaterials];
 	for (int i = 0; i < numMaterials; i++)
 	{
-		// here we read each element in individually, since we want them to have a name later.  I could replace this with a loop, and we could keep the names, too, but that just might make it more confusing.
 		myfile >> materialData[i].id;
 		myfile >> materialData[i].YM;
 		myfile >> materialData[i].Poisson;
@@ -84,8 +84,8 @@ void Controller::readData(string fileName)
 		myfile >> elementData[i].Node8;
 	}
 
-	nodeData = new NodeData[numNodes];
 	//Get node properties
+	nodeData = new NodeData[numNodes];
 	for (int i = 0; i < numNodes; i++)
 	{
 		myfile >> nodeData[i].id;
@@ -132,6 +132,7 @@ void Controller::readData(string fileName)
 	myfile.close();
 }
 
+//Write data to output file
 void Controller::writeData(string fileName)
 {
 	ofstream output(fileName);
@@ -304,3 +305,15 @@ int Controller::getPFs()
 {
 	return numPFs;
 }
+int Controller::getPFNode(int i)
+{
+	return pointForceData[i].node;
+}
+char* Controller::getPFdirection(int i)
+{
+	return pointForceData[i].direction;
+}
+double Controller::getPFvalue(int i)
+{
+	return pointForceData[i].value;
+} 

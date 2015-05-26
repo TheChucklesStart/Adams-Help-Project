@@ -4,6 +4,7 @@
 #include "calc_M_matrix.h"
 #include "calc_B_matrix.h"
 #include "calc_Ke_matrix.h"
+#include "calc_load_vector.h"
 #include "Controller.h"
 
 
@@ -54,10 +55,16 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < controller.getNumElements();i++)
 	{
 		calc_Ke_matrix result(controller.getElemenetClass(i), controller.getThickness(), test);
-		result.printData(cout);
-		cout << endl << endl << endl;
+		//result.printData(cout);
+		//cout << endl << endl << endl;
 	}
-	//calc_B_matrix trial(controller.getElemenetClass(0), controller, 1, 1);
+	for (int j = 0; j < controller.getNumElements(); j++)
+	{
+		calc_B_matrix trial(controller.getElemenetClass(j), controller, 1, 1);
+		calc_load_vector vec(controller.getElemenetClass(j), controller, trial, 1, 1);
+		//trial.printData(cout);
+		vec.printData(cout);
+	}
 	//calc_B_matrix trial(controller.getElemID(0), controller,1,1);
 	//calc_M_matrix value(trial, test);
 	
@@ -65,8 +72,7 @@ int main(int argc, char* argv[])
 	//controller.getElemID(0)
 
 	//test.printData(cout);
-	//trial.printData(cout);
-	
+
 	//cout << controller.getProbType() << endl;
 	//cout << controller.getYM() << endl;
 	//cout << controller.getPoisson() << endl;
