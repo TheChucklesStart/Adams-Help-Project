@@ -56,9 +56,9 @@ calc_Ke_matrix::~calc_Ke_matrix()
 	MatrixFunctions::deleteMatrix(Ke_matrix, 16, 16);
 }
 
-double calc_Ke_matrix::getKematrix()
+double** calc_Ke_matrix::getKematrix()
 {
-	return Ke_matrix[16][16];
+	return Ke_matrix;
 }
 
 void calc_Ke_matrix::printData(ostream &out) const

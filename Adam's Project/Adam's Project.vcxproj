@@ -68,11 +68,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\calc_load_vector.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_bmatrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_kematrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\cal_mmatrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Controller.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\Element.cpp" />
+    <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\global_matrix.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\main.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\matrixfunctions.cpp" />
     <ClCompile Include="..\..\Adam%27s Project\Adam%27s Project\stdafx.cpp" />
@@ -85,7 +87,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_B_matrix.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_global.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_Ke_matrix.h" />
+    <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_load_vector.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\calc_M_matrix.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Controller.h" />
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\Element.h" />

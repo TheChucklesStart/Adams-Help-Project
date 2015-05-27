@@ -20,6 +20,6 @@ public:
 	~calc_Ke_matrix();
 
 	//Functions
-	double getKematrix();
+	double **getKematrix();
 	void printData(ostream &out) const;
 };
