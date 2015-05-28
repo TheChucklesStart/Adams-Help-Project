@@ -53,6 +53,7 @@ int main(int argc, char* argv[])
 	calc_D_matrix test(controller.getProbType(), controller.getYM(), controller.getPoisson(), controller);
 	
 	//Calculate element stiffness matrices (K matrices) 
+	// TODO delete array
 	calc_Ke_matrix** results = new calc_Ke_matrix*[controller.getNumElements()];
 	for (int i = 0; i < controller.getNumElements();i++)
 	{
