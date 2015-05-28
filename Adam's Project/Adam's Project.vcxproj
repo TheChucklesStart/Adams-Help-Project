@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp" />
+    <None Include="..\..\Adam%27s Project\Adam%27s Project\plate.inp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h" />

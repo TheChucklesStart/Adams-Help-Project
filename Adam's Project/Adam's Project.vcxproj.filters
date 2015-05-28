@@ -59,6 +59,9 @@
     <None Include="..\..\Adam%27s Project\Adam%27s Project\e4plate.inp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\..\Adam%27s Project\Adam%27s Project\plate.inp">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Adam%27s Project\Adam%27s Project\BasicStructures.h">
