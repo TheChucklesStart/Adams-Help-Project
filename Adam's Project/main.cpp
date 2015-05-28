@@ -59,6 +59,7 @@ int main(int argc, char* argv[])
 	{
 		results[i] = new calc_Ke_matrix(controller.getElemenetClass(i), controller.getThickness(), test);
 		results[i]->printData(cout);
+		(*results[i]).printData(cout);
 		cout << endl << endl << endl;
 		/*calc_global global(controller, controller.getElemenetClass(i), test, result);
 		global.printData(cout);
